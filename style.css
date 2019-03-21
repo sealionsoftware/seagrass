@@ -1,0 +1,160 @@
+/*
+Theme Name: Seagrass
+Author: Richard Woods
+Description: Sealion Software wordpress theme
+Version: 0.0.1
+Tags: Sealion Software
+*/
+
+* {
+    font-family: 'M PLUS 1p', sans-serif;
+
+    --mist: #e1e0ff;
+    --lavendar: #9998d2;
+    --purple: #7674d1;
+    --storm: #464646;
+    --cherry: #932236;
+}
+
+body {
+    margin: 0;
+    color: var(--storm);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+a {
+    color: inherit;
+}
+
+.header {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pinned {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+}
+
+.navbar {
+    padding: 0 4em;
+    display: inline-flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo-bound {
+    height: 10em;
+    flex: 1;
+    margin: 1em 0 1em 2em;
+    position:relative;
+}
+
+.custom-logo {
+    position:absolute;
+    height: 100%;
+    max-width: 100%;
+    bottom: 0;
+}
+
+.menu-navigation-container {
+    margin: 1em 0;
+}
+
+.graphic {
+    background-image: url("workstation.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 1em 4em;
+    flex: 1;
+}
+
+.menu-navigation-container .menu-item {
+    text-decoration: none;
+    font-weight: bolder;
+    margin-left: 1em;
+}
+
+.menu-social-links-container {
+    float:right;
+}
+
+.menu-social-links-container span {
+    font-size: 2em;
+    margin-left: 0.4em;
+}
+
+.menu-navigation-container li a {
+    text-decoration: none;
+}
+
+.menu-navigation-container li a:hover {
+    color: var(--purple);
+}
+
+.menu-navigation-container li.action a {
+    background-color: var(--cherry);
+    color: white;
+    padding: 0.5em 1.5em;
+    border-radius: 0.5em;
+}
+
+.menu-navigation-container li.action:hover {
+    color: white;
+    background-color: var(--mist);
+}
+
+ul.menu {
+    padding: 0;
+}
+
+ul.menu li {
+    display: inline;
+}
+
+.main {
+    padding: 1em 4em;
+    flex: 1;
+}
+
+h1 {
+    display: inline-block;
+    padding: 0.3em 0.7em;
+    background-color: white; opacity:0.85;
+    border-radius: 0.4rem;
+}
+
+h2 {
+    font-size: 16pt;
+    font-style: italic;
+    color: var(--purple);
+}
+
+h3 {
+    font-size: 14pt;
+    color: var(--lavendar);
+}
+
+.footer {
+    padding: 1em 4em;
+    background-color: var(--storm);
+    color: white;
+}
+
+.menu-footer-links-container li:after {
+    content: " | ";
+}
+
+.menu-footer-links-container li:last-child:after {
+    content: "";
+}
+
+.nf-before-form-content {
+    margin-bottom: 1em;
+}
