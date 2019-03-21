@@ -27,7 +27,8 @@
             event.preventDefault();
             this.blur();
             $(this).modal({
-                showClose: false
+                showClose: false,
+                fadeDuration: 200
             });
         });
     });
