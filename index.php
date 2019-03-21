@@ -10,6 +10,8 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
         <script src="<?php echo get_bloginfo('template_directory'); ?>/script.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+
         <?php wp_head(); ?>
     </head>
     <body>
@@ -19,12 +21,14 @@
                     <?php echo get_custom_logo( $blog_id = 0 ) ?>
                 </div>
                 <div class="top-menu">
-                    <?php echo wp_nav_menu( array( 'theme_location' => 'top-menu') ); ?>
                     <a href="#" class="icon">
                         <span class="fa fa-bars"></span>
                     </a>
+                    <?php echo wp_nav_menu( array( 'theme_location' => 'top-menu') ); ?>
                 </div>
-
+            </div>
+            <div class="mobile-menu">
+                <?php echo wp_nav_menu( array( 'theme_location' => 'top-menu') ); ?>
             </div>
             <div class="graphic">
                 <h1><?php the_title();?></h1>

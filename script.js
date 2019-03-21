@@ -37,7 +37,7 @@
         $(".top-menu .icon").click(function(e) {
             e.preventDefault();
             this.blur();
-            $(".top-menu").toggleClass('open');
+            $(".mobile-menu").toggleClass('open');
         });
 
     });

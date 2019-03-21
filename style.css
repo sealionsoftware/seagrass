@@ -14,6 +14,8 @@ Tags: Sealion Software
     --purple: #7674d1;
     --storm: #464646;
     --cherry: #932236;
+
+    --gutter: 4em;
 }
 
 /* Basic Elements */
@@ -24,6 +26,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    line-height: 2em;
 }
 
 a {
@@ -75,7 +78,7 @@ ul.menu li {
 }
 
 .navbar {
-    padding: 0 4em;
+    padding: 0 var(--gutter);
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
@@ -85,7 +88,7 @@ ul.menu li {
 .logo-bound {
     height: 10em;
     min-width: 15em;
-    margin: 1em 0 1em 2em;
+    margin: 1em 0;
     position:relative;
 }
 
@@ -99,7 +102,6 @@ ul.menu li {
 .top-menu {
     flex-basis: auto;
     flex-grow: 1;
-    line-height: 2em;
 }
 
 .top-menu .icon {
@@ -109,57 +111,70 @@ ul.menu li {
     font-size: 2em;
 }
 
+.top-menu .menu-navigation-container ul {
+    float: right;
+    margin: 2em 0;
+}
+
+.mobile-menu {
+    display: none;
+    padding: 0 var(--gutter);
+}
+
+.mobile-menu ul {
+    margin-top: 0;
+}
+
+.mobile-menu .menu-item {
+    display: block;
+    margin-left: 0;
+    border-bottom: 1px var(--lavendar) solid;
+}
+
 .graphic {
     background-image: url("workstation.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 1em 4em;
+    padding: 1em var(--gutter);
     flex: 1;
 }
 
-.menu-navigation-container .menu-item {
-    text-decoration: none;
+.menu-navigation-container {
     font-weight: bolder;
+}
+
+.top-menu .menu-item {
     margin-left: 1em;
-}
-
-.menu-navigation-container ul {
-    float: right;
-    margin: 2em 0;
-}
-
-.menu-navigation-container li a {
-    text-decoration: none;
 }
 
 .menu-navigation-container li a:hover {
     color: var(--purple);
 }
 
-.menu-navigation-container li.action a {
+.top-menu .menu-navigation-container li.action a {
     background-color: var(--cherry);
     color: white;
     padding: 0.5em 1.5em;
     border-radius: 0.5em;
 }
 
-.menu-navigation-container li.action:hover {
+.top-menu .menu-navigation-container li.action a:hover {
     color: white;
-    background-color: var(--mist);
+    background-color: var(--storm);
 }
 
 /* Page Body */
 
 .main {
-    padding: 1em 4em;
+    padding: 1em var(--gutter);
     flex: 1;
 }
 
 /* Footer */
 
 .footer {
-    padding: 1em 4em;
+    padding: 1em var(--gutter);
     background-color: var(--storm);
     color: white;
 }
@@ -191,8 +206,28 @@ ul.menu li {
 /* Responsive */
 
 @media screen and (max-width: 650px) {
-    .top-menu ul {display: none;}
+
+    .top-menu .menu-navigation-container {
+        display: none;
+    }
+
     .top-menu .icon {
+        display: inline-block;
+    }
+
+    .mobile-menu.open {
         display: block;
+    }
+
+}
+
+@media screen and (min-width: 1600px) {
+
+    * {
+        --gutter: 8em;
+    }
+
+    body {
+        font-size: 18pt;
     }
 }
