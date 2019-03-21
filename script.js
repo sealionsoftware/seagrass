@@ -4,7 +4,7 @@
 
     function adjustHeader() {
 
-        let $navMenu = $('.menu-navigation-container');
+        let $navMenu = $('.top-menu');
         let $header = $('.header');
         let $logoBound = $('.logo-bound');
         let $logo = $('.custom-logo');
@@ -22,15 +22,24 @@
     }
 
     $( document ).ready( function() {
+
         adjustHeader();
-        $("a[href='#contact-overlay']").click(function(event) {
-            event.preventDefault();
+
+        $("a[href='#contact-overlay']").click(function(e) {
+            e.preventDefault();
             this.blur();
             $(this).modal({
                 showClose: false,
                 fadeDuration: 200
             });
         });
+
+        $(".top-menu .icon").click(function(e) {
+            e.preventDefault();
+            this.blur();
+            $(".top-menu").toggleClass('open');
+        });
+
     });
 
 

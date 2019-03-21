@@ -58,7 +58,6 @@ ul.menu {
 ul.menu li {
     display: inline;
     white-space: nowrap;
-    line-height: 2em;
 }
 
 /* Header */
@@ -97,6 +96,19 @@ ul.menu li {
     bottom: 0;
 }
 
+.top-menu {
+    flex-basis: auto;
+    flex-grow: 1;
+    line-height: 2em;
+}
+
+.top-menu .icon {
+    float: right;
+    margin: 1em 0;
+    display: none;
+    font-size: 2em;
+}
+
 .graphic {
     background-image: url("workstation.png");
     background-repeat: no-repeat;
@@ -104,12 +116,6 @@ ul.menu li {
     background-position: center;
     padding: 1em 4em;
     flex: 1;
-}
-
-.menu-navigation-container {
-    margin: 1em 0;
-    flex-basis: auto;
-    flex-grow: 1;
 }
 
 .menu-navigation-container .menu-item {
@@ -120,6 +126,7 @@ ul.menu li {
 
 .menu-navigation-container ul {
     float: right;
+    margin: 2em 0;
 }
 
 .menu-navigation-container li a {
@@ -179,4 +186,13 @@ ul.menu li {
 
 .nf-before-form-content {
     margin-bottom: 1em;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 650px) {
+    .top-menu ul {display: none;}
+    .top-menu .icon {
+        display: block;
+    }
 }

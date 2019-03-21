@@ -18,7 +18,13 @@
                 <div class="logo-bound">
                     <?php echo get_custom_logo( $blog_id = 0 ) ?>
                 </div>
-                <?php echo wp_nav_menu( array( 'theme_location' => 'top-menu' ) ); ?>
+                <div class="top-menu">
+                    <?php echo wp_nav_menu( array( 'theme_location' => 'top-menu') ); ?>
+                    <a href="#" class="icon">
+                        <span class="fa fa-bars"></span>
+                    </a>
+                </div>
+
             </div>
             <div class="graphic">
                 <h1><?php the_title();?></h1>
