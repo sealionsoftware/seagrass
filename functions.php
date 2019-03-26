@@ -14,9 +14,10 @@ function add_file_types_to_uploads($file_types){
 function register_menus() {
     register_nav_menus(
         array(
-            'top-menu' => __( 'Top Menu' ),
-            'social-menu' => __( 'Social Menu' ),
-            'footer-menu' => __( 'Footer Menu' ),
+            'top-links' => __( 'Top Right Links' ),
+            'navigation-menu' => __( 'Navigation Menu' ),
+            'footer-left-links' => __( 'Footer Left Links' ),
+            'footer-right-links' => __( 'Footer Right Links' ),
         )
     ); //TODO multiple calls
 }

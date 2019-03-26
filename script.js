@@ -8,7 +8,7 @@
 
             function adjustHeader() {
 
-                let $navMenu = $('.top-menu');
+                let $navMenu = $('.wide-menu');
                 let $header = $('.header');
                 let $logoBound = $('.logo-bound');
                 let $logo = $('.custom-logo');
@@ -46,7 +46,7 @@
             });
         });
 
-        $(".top-menu .icon").click(function(e) {
+        $(".wide-menu .icon").click(function(e) {
             e.preventDefault();
             this.blur();
             $(".mobile-menu").toggleClass('open');

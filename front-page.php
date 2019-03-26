@@ -31,4 +31,5 @@
         </div>
         <?php get_footer(); ?>
     </body>
+    <?php wp_footer(); ?>
 </html>
