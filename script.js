@@ -12,17 +12,22 @@
                 let $header = $('.header');
                 let $logoBound = $('.logo-bound');
                 let $logo = $('.custom-logo');
+                let $graphic = $('.graphic');
                 let scrollPos = $(window).scrollTop();
                 let navtop = $navMenu.position().top;
 
                 // If the scroll is more than the custom header, set the fixed class.
-                if (scrollPos >= (navtop)) {
+                if (scrollPos >= navtop) {
                     $header.addClass(navigationFixedClass);
                     $header.css({ top: -navtop });
-                    $logo.height($logoBound.height() - navtop);
+                    let newHeight = $logoBound.height() - navtop;
+                    $logo.height(newHeight);
+                    $graphic.height(newHeight);
                 } else {
                     $header.removeClass(navigationFixedClass);
-                    $logo.height($logoBound.height() - scrollPos);
+                    let newHeight = $logoBound.height() - scrollPos;
+                    $logo.height(newHeight);
+                    $graphic.height(newHeight);
                 }
             }
 
@@ -30,7 +35,6 @@
 
             $( window ).on( 'scroll', function() {
                 adjustHeader();
-                //adjustHeaderHeight();
             });
 
             $( window ).resize( function() {

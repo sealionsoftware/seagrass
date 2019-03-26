@@ -15,7 +15,7 @@ Tags: Sealion Software
     --storm: #464646;
     --cherry: #932236;
 
-    --gutter: 4em;
+    --gutter: 6em;
 }
 
 /* Basic Elements */
@@ -137,8 +137,13 @@ ul.menu li {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 1em var(--gutter);
+    padding: 0 var(--gutter);
     flex: 1;
+    height: 160px;
+    min-height: 6em;
+    display: flex;
+    align-items: center;
+
 }
 
 .navigation-menu{
@@ -200,7 +205,7 @@ ul.menu li {
 .top-links {
     position: absolute;
     top: 1em;
-    right: 4em;
+    right: var(--gutter);
     color: var(--lavendar);
 }
 
@@ -253,7 +258,7 @@ ul.menu li {
 @media screen and (min-width: 1600px) {
 
     * {
-        --gutter: 10em;
+        --gutter: 12em;
     }
 
     body {
