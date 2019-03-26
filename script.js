@@ -19,6 +19,7 @@
                 if (scrollPos >= (navtop)) {
                     $header.addClass(navigationFixedClass);
                     $header.css({ top: -navtop });
+                    $logo.height($logoBound.height() - navtop);
                 } else {
                     $header.removeClass(navigationFixedClass);
                     $logo.height($logoBound.height() - scrollPos);
