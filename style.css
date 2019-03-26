@@ -35,6 +35,7 @@ a {
 }
 
 h1 {
+    font-size: 2em;
     display: inline-block;
     padding: 0.3em 0.7em;
     background-color: white; opacity:0.85;
@@ -42,14 +43,14 @@ h1 {
 }
 
 h2 {
-    font-size: 16pt;
-    font-style: italic;
+    font-size: 1.5em;
     color: var(--purple);
 }
 
 h3 {
-    font-size: 14pt;
+    font-size: 1.2em;
     color: var(--lavendar);
+    font-style: italic;
 }
 
 /* General Styles */
@@ -171,6 +172,23 @@ ul.menu li {
     flex: 1;
 }
 
+.landing {
+    padding: 0 var(--gutter);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 100vh;
+}
+
+.landing div:first-child {
+    flex: 1;
+}
+
+.landing div {
+    flex: 2;
+    margin: 2em;
+}
+
 /* Footer */
 
 .footer {
@@ -224,7 +242,7 @@ ul.menu li {
 @media screen and (min-width: 1600px) {
 
     * {
-        --gutter: 8em;
+        --gutter: 10em;
     }
 
     body {
