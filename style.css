@@ -6,7 +6,7 @@ Version: 0.0.1
 Tags: Sealion Software
 */
 
-* {
+html {
     font-family: 'M PLUS 1p', sans-serif;
 
     --mist: #e1e0ff;
@@ -15,7 +15,7 @@ Tags: Sealion Software
     --storm: #464646;
     --cherry: #932236;
 
-    --gutter: 6em;
+    --gutter: 6rem;
 }
 
 /* Basic Elements */
@@ -84,6 +84,7 @@ ul.menu li {
     align-items: flex-end;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .logo-bound {
@@ -113,6 +114,7 @@ ul.menu li {
 }
 
 .wide-menu .navigation-menu ul {
+    display: flex;
     float: right;
     margin: 2em 0;
 }
@@ -130,6 +132,10 @@ ul.menu li {
     display: block;
     margin-left: 0;
     border-bottom: 1px var(--lavendar) solid;
+}
+
+.mobile-menu .menu-item:last-child {
+    border-bottom: none;
 }
 
 .graphic {
@@ -173,14 +179,22 @@ ul.menu li {
 /* Page Body */
 
 .main {
-    padding: 1em var(--gutter);
     flex: 1;
+}
+
+.main div, p, h2, h3 {
+    padding: 0 var(--gutter);
+}
+
+.main div:first-child, main p:first-child {
+    padding: 0.5em var(--gutter);
+    background: var(--mist);
+    line-height: 1.5em;
 }
 
 .landing {
     padding: 0 var(--gutter);
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     height: 100vh;
 }
@@ -191,7 +205,7 @@ ul.menu li {
 
 .landing div {
     flex: 2;
-    margin: 2em;
+    margin: 1em 2em;
 }
 
 /* Footer */
@@ -241,6 +255,10 @@ ul.menu li {
 
 @media screen and (max-width: 650px) {
 
+    * {
+        --gutter: 3em;
+    }
+
     .wide-menu .navigation-menu {
         display: none;
     }
@@ -251,6 +269,11 @@ ul.menu li {
 
     .mobile-menu.open {
         display: block;
+        transition: height 2s;
+    }
+
+    .landing {
+        flex-direction: column;
     }
 
 }
