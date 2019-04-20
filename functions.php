@@ -48,10 +48,9 @@ function register_widgets() {
     );
 }
 
-function register_color_option( $wp_customize, $name, $display_name, $default )
+function register_color_option( $wp_customize, $name, $display_name )
 {
     $wp_customize->add_setting( $name , array(
-        'default'   => $default,
         'transport' => 'refresh',
     ));
     $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $name, array(
@@ -75,11 +74,11 @@ function register_ga_id( $wp_customize )
 
 function register_options( $wp_customize ) {
 
-    register_color_option($wp_customize, 'primary_color', 'Primary Color', 'blue');
-    register_color_option($wp_customize, 'secondary_color', 'Secondary Color', 'lightblue');
-    register_color_option($wp_customize, 'tertiary_color', 'Tertiary Color', 'lightgrey');
-    register_color_option($wp_customize, 'strong_color', 'Strong Color', 'grey');
-    register_color_option($wp_customize, 'highlight_color', 'Highlight Color', 'red');
+    register_color_option($wp_customize, 'primary_color', 'Primary Color');
+    register_color_option($wp_customize, 'secondary_color', 'Secondary Color');
+    register_color_option($wp_customize, 'tertiary_color', 'Tertiary Color');
+    register_color_option($wp_customize, 'strong_color', 'Strong Color');
+    register_color_option($wp_customize, 'highlight_color', 'Highlight Color');
     register_ga_id($wp_customize);
 }
 
