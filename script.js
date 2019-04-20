@@ -14,13 +14,13 @@
                 let $logo = $('.custom-logo');
                 let $graphic = $('.graphic');
                 let scrollPos = $(window).scrollTop();
-                let navtop = $navMenu.position().top;
+                let navTop = $navMenu.position().top;
 
                 // If the scroll is more than the custom header, set the fixed class.
-                if (scrollPos >= navtop) {
+                if (scrollPos >= navTop) {
                     $header.addClass(navigationFixedClass);
-                    $header.css({ top: -navtop });
-                    let newHeight = $logoBound.height() - navtop;
+                    $header.css({ top: -navTop });
+                    let newHeight = $logoBound.height() - navTop;
                     $logo.height(newHeight);
                     $graphic.height(newHeight);
                 } else {
