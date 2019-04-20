@@ -9,12 +9,6 @@ Tags: Sealion Software
 html {
     font-family: 'M PLUS 1p', sans-serif;
 
-    --tertiary: #e1e0ff;
-    --secondary: #9998d2;
-    --primary: #7674d1;
-    --strong: #464646;
-    --highlight: #932236;
-
     --gutter: 6rem;
 }
 
@@ -29,7 +23,6 @@ body {
     line-height: 2em;
     background: url("curve-nw.svg") no-repeat;
     background-size: 20%;
-
 }
 
 a {

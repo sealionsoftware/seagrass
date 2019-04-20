@@ -48,6 +48,74 @@ function register_widgets() {
     );
 }
 
+function register_color_option( $wp_customize, $name, $display_name, $default )
+{
+    $wp_customize->add_setting( $name , array(
+        'default'   => $default,
+        'transport' => 'refresh',
+    ));
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $name, array(
+        'label'      => __( $display_name, 'seagrass' ),
+        'section'    => 'colors',
+        'settings'   => $name,
+    )));
+}
+
+function register_ga_id( $wp_customize )
+{
+    $wp_customize->add_setting( 'ga_id' , array(
+        'transport' => 'refresh'
+    ));
+    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ga_id', array(
+        'label'      => __( 'Google Analytics Tracker ID', 'seagrass' ),
+        'section'    => 'title_tagline',
+        'settings'   => 'ga_id',
+    )));
+}
+
+function register_options( $wp_customize ) {
+
+    register_color_option($wp_customize, 'primary_color', 'Primary Color', 'blue');
+    register_color_option($wp_customize, 'secondary_color', 'Secondary Color', 'lightblue');
+    register_color_option($wp_customize, 'tertiary_color', 'Tertiary Color', 'lightgrey');
+    register_color_option($wp_customize, 'strong_color', 'Strong Color', 'grey');
+    register_color_option($wp_customize, 'highlight_color', 'Highlight Color', 'red');
+    register_ga_id($wp_customize);
+}
+
+function generate_dynamic_css()
+{
+    ?>
+    <style type="text/css">
+        html {
+            --primary: <?php echo get_theme_mod('primary_color'); ?>;
+            --secondary: <?php echo get_theme_mod('secondary_color'); ?>;
+            --tertiary: <?php echo get_theme_mod('tertiary_color'); ?>;
+            --strong: <?php echo get_theme_mod('strong_color'); ?>;
+            --highlight: <?php echo get_theme_mod('highlight_color'); ?>;
+        }
+    </style>
+    <?php
+}
+
+function generate_ga_integration()
+{
+    $id = get_theme_mod('ga_id');
+    if ($id) : ?>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $id; ?>"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', "<?php echo $id; ?>");
+        </script>
+    <?php endif;
+}
+
+add_action( 'wp_head', 'generate_dynamic_css');
+add_action( 'wp_head', 'generate_ga_integration');
+add_action( 'customize_register', 'register_options' );
 add_action( 'upload_mimes', 'add_file_types_to_uploads' );
 add_action( 'widgets_init', 'register_widgets' );
 add_action( 'init', 'register_menus' );
