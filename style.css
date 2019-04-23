@@ -49,6 +49,11 @@ h3 {
     font-style: italic;
 }
 
+blockquote {
+    margin: 0 4em;
+    font-style: italic;
+}
+
 /* General Styles */
 
 ul.menu {
@@ -181,8 +186,13 @@ ul.menu li {
     background-size: 20%, 60%;
 }
 
-.main div {
+.main > div {
     padding: 0 var(--gutter);
+}
+
+.main iframe {
+    width: 100%;
+    height: 16rem;
 }
 
 .landing {
