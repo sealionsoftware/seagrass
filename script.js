@@ -40,11 +40,17 @@ function adjustHeader() {
     }
 }
 
+// MS browsers observed not to scale svg smoothly due to async rendering
+// https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/15416990/
+function canResizeSVGSmoothly(){
+    return !(/msie|trident|edge/g.test(navigator.userAgent.toLowerCase()));
+}
+
 (function($) {
 
     $( document ).ready( function() {
 
-        if ($('.header').length){
+        if (canResizeSVGSmoothly() && $('.header').length){
 
             adjustHeader();
 
