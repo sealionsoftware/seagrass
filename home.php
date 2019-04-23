@@ -5,10 +5,19 @@
         <?php get_header();?>
         <div class="main">
             <?php if (have_posts()) : while (have_posts()) : the_post();?>
-                <div class="content">
+            <div class="content">
+                <div class="article">
                     <h2><?php the_title();?></h2>
+                    <h3 class="date"><?php the_date();?></h3>
                     <?php the_content(); ?>
+                    <div class="author">
+                        <a href="<?php echo  get_the_author_meta( 'user_url' ) ?>">
+                            <h3>by <?php echo get_the_author_meta('display_name'); ?></h3>
+                            <?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?>
+                        </a>
+                    </div>
                 </div>
+            </div>
             <?php endwhile; endif; ?>
         </div>
         <?php get_footer(); ?>
