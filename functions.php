@@ -5,6 +5,14 @@ add_theme_support( 'custom-logo' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'customize-selective-refresh-widgets' );
 
+$minimum_browser_version = array(
+    'Chrome' => 70,
+    'Firefox' => 70,
+    'Edge' => 17,
+    'Internet Explorer' => 11,
+    'Safari' => 5
+);
+
 function add_file_types_to_uploads($file_types){
     $new_filetypes = array();
     $new_filetypes['svg'] = 'image/svg+xml';
@@ -112,6 +120,40 @@ function generate_ga_integration()
     <?php endif;
 }
 
+function redirect_404()
+{
+    if (is_404() ) {
+        $query = new WP_Query();
+        $query->query(array('pagename' =>'not-found'));
+        $query->is_page = false;
+        $GLOBALS['wp_query'] = $query;
+    }
+}
+
+function redirect_update_browser($query)
+{
+    if (!($query->is_main_query())){
+        return;
+    }
+
+    $user_agent = get_browser(null,true);
+    $browser = $user_agent['browser'];
+    $version = $user_agent['version'];
+    if ($browser == null || $version == null){
+        return;
+    }
+
+    $min_version = $GLOBALS['minimum_browser_version'][$browser];
+    if ($min_version == null || $version < $min_version) {
+        $query = new WP_Query();
+        $query->query( array('pagename' => 'update-browser' ) );
+        $query->is_page = false;
+        $GLOBALS['wp_query'] = $query;
+    }
+}
+
+add_action( 'pre_get_posts', 'redirect_update_browser' );
+add_action( 'template_redirect', 'redirect_404' );
 add_action( 'wp_head', 'generate_dynamic_css');
 add_action( 'wp_head', 'generate_ga_integration');
 add_action( 'customize_register', 'register_options' );
