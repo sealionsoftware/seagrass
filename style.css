@@ -251,7 +251,7 @@ ul.menu li {
     position: absolute;
     top: 1em;
     right: var(--gutter);
-    color: var(--secondary);
+    color: var(--secondary) !important;
 }
 
 .top-links span {

@@ -48,7 +48,7 @@ add_theme_support( 'starter-content', array(
     'attachments' => array(
         'image-seagrass-meadow' => array(
             'post_title' => _x( 'Seagrass Meadow', 'Defaults', 'seagrass' ),
-            'file'       => 'seagrass.jpg'
+            'file'       => 'sea-algae.jpg'
         ),
         'image-seagrass-logo' => array(
             'post_title' => _x( 'Seagrass Logo', 'Defaults', 'seagrass' ),
@@ -77,7 +77,8 @@ add_theme_support( 'starter-content', array(
             'name'  => __( 'Main Pages', 'seagrass' ),
             'items' => array(
                 'page_about',
-                'page_news'
+                'page_news',
+                'link_contact' => array('title' => 'Contact Us', 'url' => '#contact-overlay')
             ),
         ),
 //
@@ -89,21 +90,21 @@ add_theme_support( 'starter-content', array(
                 'link_email' => array('title' => '<span class="fas fa-envelope"/>', 'url' => 'mailto:you@yourdomain.com')
             ),
         ),
-//
+
         // Assign a menu to the "footer right links" location.
 //        'footer-left-links' => array(
 //            'name'  => __( 'Secondary Pages', 'seagrass' ),
 //            'items' => array(
-//                'page_privacy_policy'
+//                'page_privacy'
 //            ),
 //        ),
-//
+
         // Assign a menu to the "footer right links" location.
         'footer-right-links' => array(
             'name'  => __( 'Administration', 'seagrass' ),
             'items' => array(
                 'link_wordpress' => array('title' => '<span class="fab fa-wordpress" title="Powered by Wordpress"/>', 'url' => 'https://www.wordpress.org'),
-                'link_login' => array('title' => '<span class="fas fa-sign-in-alt" title="Sign In"/>', 'url' => '/wp-login')
+                'link_login' => array('title' => '<span class="fas fa-sign-in-alt" title="Sign In"/>', 'url' => '/wp-admin')
             ),
         )
     )
