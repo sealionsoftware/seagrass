@@ -1,5 +1,5 @@
 <head>
-    <title><?php echo get_bloginfo( 'name' ); ?> - <?php echo is_404() ? get_page_by_path( 'not-found' )->post_title : get_the_title(); ?></title>
+    <title><?php echo get_bloginfo( 'name' ); ?> - <?php echo is_front_page() ? get_bloginfo( 'description' ): get_the_title(); ?></title>
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" crossorigin="anonymous" rel="stylesheet">
     <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" rel="stylesheet">
     <link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">

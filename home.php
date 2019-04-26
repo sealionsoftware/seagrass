@@ -11,7 +11,7 @@
                     <h3 class="date"><?php the_date();?></h3>
                     <?php the_content(); ?>
                     <div class="author">
-                        <a href="<?php echo  get_the_author_meta( 'user_url' ) ?>">
+                        <a href="<?php echo  get_the_author_meta('user_url') ?>">
                             <h3>by <?php echo get_the_author_meta('display_name'); ?></h3>
                             <?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?>
                         </a>

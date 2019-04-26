@@ -147,13 +147,10 @@ ul.menu li {
 }
 
 .graphic {
-    background-image: url("seagrass-default.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     padding: 0 var(--gutter);
-    flex: 1;
-    height: 160px;
     min-height: 6em;
     display: flex;
     align-items: center;
