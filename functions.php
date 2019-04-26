@@ -13,32 +13,24 @@ add_theme_support( 'custom-logo' );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'customize-selective-refresh-widgets' );
 add_theme_support( 'starter-content', array(
-//    'widgets'     => array(
-//        // Place three core-defined widgets in the sidebar area.
-//        'sidebar-1' => array(
-//            'text_business_info',
-//            'search',
-//            'text_about',
-//        ),
-//
-//        // Add the core-defined business info widget to the footer 1 area.
-//        'sidebar-2' => array(
-//            'text_business_info',
-//        ),
-//
-//        // Put two core-defined widgets in the footer 2 area.
-//        'sidebar-3' => array(
-//            'text_about',
-//            'search',
-//        ),
-//    ),
+    'widgets'     => array(
+        // Place core-defined widget in the overlay area.
+        'overlay' => array(
+            'text_business_info'
+        ),
+
+        // Add the core-defined business info widget to the footer area.
+        'footer' => array(
+            'text_about'
+        )
+    ),
 
     // Specify the core-defined pages to create and add custom thumbnails to some of them.
     'posts'       => array(
         'home',
         'about',
         'news',
-        'privacy'
+        'privacy_policy'
 //        'homepage-section' => array(
 //            'thumbnail' => '{{image-espresso}}',
 //        ),
@@ -78,7 +70,7 @@ add_theme_support( 'starter-content', array(
             'items' => array(
                 'page_about',
                 'page_news',
-                'link_contact' => array('title' => 'Contact Us', 'url' => '#contact-overlay')
+                'link_contact' => array('title' => 'Contact Us', 'url' => '#overlay', 'classes' => 'action')
             ),
         ),
 //
@@ -86,25 +78,31 @@ add_theme_support( 'starter-content', array(
         'top-links' => array(
             'name'  => __( 'Social Links Menu', 'seagrass' ),
             'items' => array(
-                'link_facebook' => array('title' => '<span class="fab fa-facebook"/>', 'url' => 'https://www.facebook.com/seagrass'),
-                'link_email' => array('title' => '<span class="fas fa-envelope"/>', 'url' => 'mailto:you@yourdomain.com')
+                'link_facebook' => array('title' => '<span class="icon-facebook"/>', 'url' => 'https://www.facebook.com/seagrass'),
+                'link_email' => array('title' => '<span class="icon-mail"/>', 'url' => 'mailto:you@yourdomain.com')
             ),
         ),
 
         // Assign a menu to the "footer right links" location.
-//        'footer-left-links' => array(
-//            'name'  => __( 'Secondary Pages', 'seagrass' ),
-//            'items' => array(
-//                'page_privacy'
-//            ),
-//        ),
+        'footer-left-links' => array(
+            'name'  => __( 'Secondary Pages', 'seagrass' ),
+            'items' => array(
+                'page_privacy' => array(
+                        'type' => 'post_type',
+                    'object' => 'page',
+                    'object_id' => '{{privacy_policy}}'
+                )
+            ),
+        ),
 
         // Assign a menu to the "footer right links" location.
         'footer-right-links' => array(
             'name'  => __( 'Administration', 'seagrass' ),
             'items' => array(
-                'link_wordpress' => array('title' => '<span class="fab fa-wordpress" title="Powered by Wordpress"/>', 'url' => 'https://www.wordpress.org'),
-                'link_login' => array('title' => '<span class="fas fa-sign-in-alt" title="Sign In"/>', 'url' => '/wp-admin')
+                'link_sealion' => array('title' => '<span class="icon-sealion" title="Design by Sealion Software"/>', 'url' => 'https://www.sealionsoftware.com'),
+                'link_wordpress' => array('title' => '<span class="icon-wordpress" title="Powered by Wordpress"/>', 'url' => 'https://www.wordpress.org'),
+                'link_unsplash' => array('title' => '<span class="icon-unsplash" title="Photo by @johnmarkarnold"/>', 'url' => 'https://unsplash.com/@johnmarkarnold?utm_medium=referral&utm_campaign=photographer-credit&utm_content=creditBadge'),
+                'link_login' => array('title' => '<span class="icon-sign-in" title="Sign In"/>', 'url' => '/wp-admin')
             ),
         )
     )
@@ -131,9 +129,9 @@ function register_menus() {
 function register_widgets() {
     register_sidebar(
         array(
-            'name'          => __( 'Contact', 'seagrass' ),
-            'id'            => 'contact',
-            'description'   => __( 'Add widgets here to appear in your contact overlay.', 'seagrass' ),
+            'name'          => __( 'Overlay', 'seagrass' ),
+            'id'            => 'overlay',
+            'description'   => __( 'Add widgets here to appear in your action overlay.', 'seagrass' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title">',

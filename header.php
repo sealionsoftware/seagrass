@@ -6,7 +6,7 @@
         </div>
         <div class="wide-menu">
             <a href="#" class="icon">
-                <span class="fa fa-bars"></span>
+                <span class="icon-bars"></span>
             </a>
             <?php echo wp_nav_menu( array( 'theme_location' => 'navigation-menu', 'container_class' => 'navigation-menu', 'fallback_cb' => false )); ?>
         </div>

@@ -63,7 +63,7 @@ function canResizeSVGSmoothly(){
             });
         }
 
-        $("a[href='#contact-overlay']").click(function(e) {
+        $("a[href='#overlay']").click(function(e) {
             e.preventDefault();
             this.blur();
             $(this).modal({

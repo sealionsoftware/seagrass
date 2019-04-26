@@ -181,6 +181,11 @@ ul.menu li {
     background-color: var(--strong);
 }
 
+#overlay {
+    padding: 2rem;
+}
+
+
 /* Page Body */
 
 .main {
