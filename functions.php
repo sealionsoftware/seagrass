@@ -31,9 +31,6 @@ add_theme_support( 'starter-content', array(
         'about',
         'news',
         'privacy_policy'
-//        'homepage-section' => array(
-//            'thumbnail' => '{{image-espresso}}',
-//        ),
     ),
 
     // Create the custom image attachments used as post thumbnails for pages.
@@ -55,11 +52,11 @@ add_theme_support( 'starter-content', array(
         'page_for_posts' => '{{news}}',
         'custom_logo' => '{{image-seagrass-logo}}',
         'default_banner_image' => '{{image-seagrass-meadow}}',
-        'primary_color' => '#4e951b',
-        'secondary_color' => '#4ed831',
-        'tertiary_color' => '#aaebdd',
+        'primary_color' => '#3a916d',
+        'secondary_color' => '#c1a472',
+        'tertiary_color' => '#d1ffba',
         'strong_color' => '#333333',
-        'highlight_color' => '#ff8080'
+        'highlight_color' => '#4e95d3'
     ),
 
     // Set up nav menus for each of the two areas registered in the theme.
@@ -70,7 +67,7 @@ add_theme_support( 'starter-content', array(
             'items' => array(
                 'page_about',
                 'page_news',
-                'link_contact' => array('title' => 'Contact Us', 'url' => '#overlay', 'classes' => 'action')
+                'link_find' => array('title' => 'Find Us', 'url' => '#overlay', 'classes' => 'action')
             ),
         ),
 //
@@ -88,7 +85,7 @@ add_theme_support( 'starter-content', array(
             'name'  => __( 'Secondary Pages', 'seagrass' ),
             'items' => array(
                 'page_privacy' => array(
-                        'type' => 'post_type',
+                    'type' => 'post_type',
                     'object' => 'page',
                     'object_id' => '{{privacy_policy}}'
                 )
@@ -206,22 +203,6 @@ function register_options( $wp_customize ) {
     register_banner_option($wp_customize);
 }
 
-function generate_dynamic_css()
-{
-    ?>
-
-    <style type="text/css">
-        html {
-            --primary: <?php echo get_theme_mod('primary_color'); ?>;
-            --secondary: <?php echo get_theme_mod('secondary_color'); ?>;
-            --tertiary: <?php echo get_theme_mod('tertiary_color'); ?>;
-            --strong: <?php echo get_theme_mod('strong_color'); ?>;
-            --highlight: <?php echo get_theme_mod('highlight_color'); ?>;
-        }
-    </style>
-    <?php
-}
-
 function generate_ga_integration()
 {
     $id = get_theme_mod('ga_id');
@@ -271,7 +252,6 @@ function redirect_update_browser($query)
 
 add_action( 'pre_get_posts', 'redirect_update_browser' );
 add_action( 'template_redirect', 'redirect_404' );
-add_action( 'wp_head', 'generate_dynamic_css');
 add_action( 'wp_head', 'generate_ga_integration');
 add_action( 'customize_register', 'register_options' );
 add_action( 'upload_mimes', 'add_file_types_to_uploads' );

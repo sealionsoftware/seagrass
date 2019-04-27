@@ -57,10 +57,6 @@ function canResizeSVGSmoothly(){
             $( window ).on( 'scroll', function() {
                 debounce(adjustHeader, 200, true)();
             });
-
-            $( window ).resize( function() {
-                debounce( adjustHeader, 400 )();
-            });
         }
 
         $("a[href='#overlay']").click(function(e) {

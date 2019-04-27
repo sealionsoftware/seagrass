@@ -18,10 +18,10 @@ body {
     margin: 0;
     color: var(--strong);
     display: flex;
-    min-height: 100vh;
+    min-height: 105vh;
     flex-direction: column;
     line-height: 2em;
-    background: url("curve-nw.svg") no-repeat;
+    background: url("curve-nw.svg.php") no-repeat;
     background-size: 20%;
 }
 
@@ -72,7 +72,7 @@ ul.menu li {
 /* Header */
 
 .header {
-    background: white url("curve-nw.svg") no-repeat;
+    background: white url("curve-nw.svg.php") no-repeat;
     background-size: 20%;
     width: 100%;
     display: flex;
@@ -190,7 +190,7 @@ ul.menu li {
 
 .main {
     flex: 1;
-    background: url("curve-sw.svg") no-repeat bottom left, url("curve-se.svg") no-repeat bottom right;
+    background: url("curve-sw.svg.php") no-repeat bottom left, url("curve-se.svg.php") no-repeat bottom right;
     background-size: 20%, 60%;
     padding: 1rem 0 2rem 0;
 }
