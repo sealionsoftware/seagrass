@@ -1,9 +1,9 @@
 /*
 Theme Name: Seagrass
 Author: Richard Woods
-Description: Sealion Software wordpress theme
-Version: 0.0.1
-Tags: Sealion Software
+Description: Seagrass is a responsive web theme for wordpress by Sealion Software. It features resizing SVG logo support, a customisable color scheme, browser support detection, and a system of graphical banners that minimises to the top of the page on scroll, to keep your branding, navigation and call to action on screen without overwhelming the available screen estate. Your home page can also feature excerpts from content pages with a custom tag to draw users into the sitemap once they’ve landed, and Google Analytics Integration is built in so that you can trace how your users are consuming yor content.
+Version: 1.0
+Tags: Sealion Software, Responsive, Scalable
 */
 
 html {
@@ -279,12 +279,6 @@ ul.menu li {
 
 .footer-left-links li:last-child:after {
     content: "";
-}
-
-/* TODO: Externalise */
-
-.nf-before-form-content {
-    margin-bottom: 1em;
 }
 
 /* Responsive */
