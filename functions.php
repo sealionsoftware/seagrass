@@ -70,17 +70,17 @@ add_theme_support( 'starter-content', array(
                 'link_find' => array('title' => 'Find Us', 'url' => '#overlay', 'classes' => 'action')
             ),
         ),
-//
-//        // Assign a menu to the "top links" location.
+
+        // Assign a menu to the "top links" location.
         'top-links' => array(
             'name'  => __( 'Social Links Menu', 'seagrass' ),
             'items' => array(
-                'link_facebook' => array('title' => '<span class="icon-facebook"/>', 'url' => 'https://www.facebook.com/seagrass'),
+                'link_facebook' => array('title' => '<span class="icon-facebook"/>', 'url' => 'https://www.facebook.com/yourbusiness'),
                 'link_email' => array('title' => '<span class="icon-mail"/>', 'url' => 'mailto:you@yourdomain.com')
             ),
         ),
 
-        // Assign a menu to the "footer right links" location.
+        // Assign a menu to the "footer left links" location.
         'footer-left-links' => array(
             'name'  => __( 'Secondary Pages', 'seagrass' ),
             'items' => array(
