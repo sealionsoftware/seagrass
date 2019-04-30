@@ -20,7 +20,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    line-height: 2em;
+    line-height: 2rem;
     background: url("curve-nw.svg.php") no-repeat;
     background-size: 20%;
 }
@@ -30,10 +30,15 @@ a {
     text-decoration: none;
 }
 
+h1,h2{
+    clear: both;
+}
+
+
 h1 {
-    font-size: 2em;
+    font-size: 2rem;
     display: inline-block;
-    padding: 0.3em 0.7em;
+    padding: 0.3rem 0.7rem;
     background-color: white; opacity:0.85;
     border-radius: 0.4rem;
 }
@@ -43,12 +48,12 @@ h2,h3{
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     color: var(--primary);
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 1.2rem;
     color: var(--secondary);
     font-style: italic;
 }
@@ -119,13 +124,13 @@ ul.menu li {
     float: right;
     margin: 1em 0;
     display: none;
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 .wide-menu .navigation-menu ul {
     display: flex;
     float: right;
-    margin: 2em 0;
+    margin: 2rem 0;
 }
 
 .mobile-menu {
@@ -163,7 +168,7 @@ ul.menu li {
 }
 
 .wide-menu .menu-item {
-    margin-left: 1em;
+    margin-left: 1rem;
 }
 
 .navigation-menu li a:hover {
@@ -173,8 +178,8 @@ ul.menu li {
 .wide-menu .navigation-menu li.action a {
     background-color: var(--highlight);
     color: white;
-    padding: 0.5em 1.5em;
-    border-radius: 0.5em;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
 }
 
 .wide-menu .navigation-menu li.action a:hover {
@@ -205,6 +210,11 @@ ul.menu li {
 .main iframe {
     width: 100%;
     height: 16rem;
+    margin-bottom: 1rem;
+}
+
+.main img {
+    margin: 1rem 2rem;
 }
 
 .landing {
