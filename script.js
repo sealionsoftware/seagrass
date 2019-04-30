@@ -43,7 +43,7 @@ function canResizeSVGSmoothly(){
                     top: -$('.wide-menu').position().top
                 });
 
-            adjustHeader();
+            adjustHeader(scaleGraphic);
 
             $( window ).on( 'scroll', function() {
                 adjustHeader(scaleGraphic);
