@@ -195,8 +195,9 @@ ul.menu li {
     background: var(--secondary);
     color: white;
     font-weight: bolder;
+    font-size: 1.2em;
     opacity: 0.7;
-    padding: 1rem var(--gutter);
+    padding: 1.2em var(--gutter);
 }
 
 /* Page Body */
@@ -263,12 +264,14 @@ figure img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin: 2rem 0;
 }
 
 .link-cards div {
     width: 25rem;
     height: 15rem;
     overflow: hidden;
+    margin: 0.5rem;
 }
 
 
