@@ -191,6 +191,13 @@ ul.menu li {
     padding: 2rem;
 }
 
+.description {
+    background: var(--secondary);
+    color: white;
+    font-weight: bolder;
+    opacity: 0.7;
+    padding: 1rem var(--gutter);
+}
 
 /* Page Body */
 
@@ -198,13 +205,7 @@ ul.menu li {
     flex: 1;
     background: url("curve-sw.svg.php") no-repeat bottom left, url("curve-se.svg.php") no-repeat bottom right;
     background-size: 20%, 60%;
-    padding: 1rem 0 2rem 0;
-}
-
-
-.main > div {
     padding: 0 var(--gutter);
-    z-index: 1;
 }
 
 .main iframe {
@@ -213,7 +214,7 @@ ul.menu li {
     margin-bottom: 1rem;
 }
 
-.main img {
+figure img {
     margin: 1rem 2rem;
 }
 
@@ -233,25 +234,41 @@ ul.menu li {
     margin: 1em 2em;
 }
 
-.article {
-    padding: 2rem;
+.lifted {
+    padding: 1.5rem;
     background-color: white; opacity:0.85;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     margin: 2rem 0;
     box-shadow: rgba(0,0,0, 0.5) 0 2px 5px;
 }
 
-.article .author {
+.lifted p:last-child {
+    margin-bottom: 0;
+}
+
+.author {
     text-align: right;
 }
 
-.article .author h3 {
+.author h3 {
     display: inline;
     margin-right: 1rem;
 }
 
-.article .author img {
+.author img {
     vertical-align: bottom;
+}
+
+.link-cards  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.link-cards div {
+    width: 25rem;
+    height: 15rem;
+    overflow: hidden;
 }
 
 

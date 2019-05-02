@@ -2,32 +2,49 @@
 <html lang="en">
     <?php get_header('head');?>
     <body>
-        <?php get_header();?>
-        <div class="main">
-            <?php if (have_posts()) : while (have_posts()) : the_post();?>
-                <div class="content">
-                    <?php the_content(); ?>
+        <?php
+            get_header();
+            $description=get_post_custom_values('description');
+            if ($description != null) :
+        ?>
+                <div class="description">
+                    <?php echo $description[0] ?>
                 </div>
-            <?php endwhile; endif; ?>
-            <?php if (is_front_page()) :
-                $featuredPages = new WP_Query(array(
-                    'post_type' => 'page',
-                    'meta_key' => 'feature-on-home',
-                    'meta_value' => 'true'
-                ));
-                while ($featuredPages->have_posts()) : $featuredPages->the_post()
+        <?php
+            endif;
+        ?>
+        <div class="main">
+            <div class="content">
+                <?php
+                    if (have_posts()) : while (have_posts()) : the_post();
+                        the_content();
+                    endwhile; endif;
+                    if (is_front_page()) :
+                        $featuredPages = new WP_Query(array(
+                            'post_type' => 'page',
+                            'meta_key' => 'feature-on-home',
+                            'meta_value' => 'true'
+                        ));
+                ?>
+                    <div class="link-cards">
+                    <?php
+                        while ($featuredPages->have_posts()) : $featuredPages->the_post()
                     ?>
-                    <div class="page-excerpt">
                         <a href="<?php the_permalink();?>">
-                            <h2><?php the_title();?></h2>
+                            <div class="lifted">
+                                <h2><?php the_title();?></h2>
+                                <?php the_content('');?>
+                            </div>
                         </a>
-                        <?php the_content('');?>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    ?>
                     </div>
                 <?php
-                endwhile;
-                wp_reset_postdata();
-            endif;
-            ?>
+                    endif;
+                ?>
+            </div>
         </div>
         <?php get_footer(); ?>
     </body>
