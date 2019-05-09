@@ -20,9 +20,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    line-height: 2rem;
-    background: url("curve-nw.svg.php") no-repeat;
-    background-size: 20%;
+    line-height: 2em;
 }
 
 a {
@@ -38,9 +36,8 @@ h1,h2{
 h1 {
     font-size: 2rem;
     display: inline-block;
-    padding: 0.3rem 0.7rem;
+    padding: 1rem 2rem;
     background-color: white; opacity:0.85;
-    border-radius: 0.4rem;
 }
 
 h2,h3{
@@ -81,8 +78,7 @@ ul.menu li {
 /* Header */
 
 .header {
-    background: white url("curve-nw.svg.php") no-repeat;
-    background-size: 20%;
+    background: white;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -101,7 +97,6 @@ ul.menu li {
     align-items: flex-end;
     justify-content: space-between;
     flex-wrap: wrap;
-    position: relative;
 }
 
 .logo-bound {
@@ -161,7 +156,7 @@ ul.menu li {
     background-size: cover;
     background-position: center;
     padding: 0 var(--gutter);
-    min-height: 6em;
+    min-height: 12rem;
     display: flex;
     align-items: center;
 
@@ -196,20 +191,21 @@ ul.menu li {
 }
 
 .description {
-    background: var(--secondary);
-    color: white;
-    font-weight: bolder;
-    font-size: 1.2em;
-    opacity: 0.7;
-    padding: 1.5em var(--gutter);
+    /*background: var(--secondary);*/
+    /*color: white;*/
+    /*font-weight: bolder;*/
+    /*font-size: 1.2em;*/
+    /*opacity: 0.7;*/
+    font-size: 4em;
+    padding: 0 var(--gutter);
+    line-height: 1em;
+    margin: 1em 0;
 }
 
 /* Page Body */
 
 .main {
     flex: 1;
-    background: url("curve-sw.svg.php") no-repeat bottom left, url("curve-se.svg.php") no-repeat bottom right;
-    background-size: 20%, 60%;
     padding: 0 var(--gutter);
 }
 
@@ -321,7 +317,7 @@ figure img {
 @media screen and (max-width: 650px) {
 
     * {
-        --gutter: 3em;
+        --gutter: 3rem;
     }
 
     .wide-menu .navigation-menu {
@@ -346,7 +342,7 @@ figure img {
 @media screen and (min-width: 1600px) {
 
     * {
-        --gutter: 12em;
+        --gutter: 12rem;
     }
 
     body {

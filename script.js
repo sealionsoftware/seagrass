@@ -1,27 +1,14 @@
 let i = 0;
 
-function adjustHeader(scaleGraphic) {
+function adjustHeader() {
 
-    let navigationFixedClass = 'pinned';
-
-    let $navMenu = $('.wide-menu');
-    let $header = $('.header');
     let $logoBound = $('.logo-bound');
     let $logo = $('.custom-logo');
-    let $graphic = $('.graphic');
     let scrollPos = $(window).scrollTop();
-    let navTop = $navMenu.position().top;
     let newHeight  = $logoBound.height() - scrollPos;
 
-    if (scaleGraphic) $graphic.height(newHeight);
     $logo.height(newHeight);
 
-    // If the scroll is more than the custom header, set the fixed class.
-    if (scrollPos > navTop) {
-        $header.addClass(navigationFixedClass);
-    } else {
-        $header.removeClass(navigationFixedClass);
-    }
 }
 
 // MS browsers observed not to scale svg smoothly due to async rendering
@@ -35,7 +22,6 @@ function canResizeSVGSmoothly(){
     $( document ).ready( function() {
 
         let header = $('.header');
-        let scaleGraphic = $(document).height() > 700;
 
         if (canResizeSVGSmoothly() && header.length){
 
@@ -43,10 +29,10 @@ function canResizeSVGSmoothly(){
                     top: -$('.wide-menu').position().top
                 });
 
-            adjustHeader(scaleGraphic);
+            adjustHeader();
 
             $( window ).on( 'scroll', function() {
-                adjustHeader(scaleGraphic);
+                adjustHeader();
             });
         }
 

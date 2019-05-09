@@ -1,4 +1,4 @@
-<div class="header">
+<div class="header pinned">
     <div class="navbar">
         <?php echo wp_nav_menu( array( 'theme_location' => 'top-links', 'container_class' => 'top-links', 'fallback_cb' => false ) ); ?>
         <div class="logo-bound">
@@ -14,7 +14,7 @@
     <div class="mobile-menu">
         <?php echo wp_nav_menu( array( 'theme_location' => 'navigation-menu', 'container_class' => 'navigation-menu', 'fallback_cb' => false )); ?>
     </div>
-    <div class="graphic" style="background-image: url('<?php echo get_banner_image() ?>'">
-        <h1><?php echo single_post_title() ?></h1>
-    </div>
+</div>
+<div class="graphic" style="background-image: url('<?php echo get_banner_image() ?>'">
+    <h1><?php echo single_post_title() ?></h1>
 </div>

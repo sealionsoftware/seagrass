@@ -203,6 +203,22 @@ function register_options( $wp_customize ) {
     register_banner_option($wp_customize);
 }
 
+function generate_dynamic_css()
+{
+    ?>
+
+    <style type="text/css">
+        html {
+            --primary: <?php echo get_theme_mod('primary_color'); ?>;
+            --secondary: <?php echo get_theme_mod('secondary_color'); ?>;
+            --tertiary: <?php echo get_theme_mod('tertiary_color'); ?>;
+            --strong: <?php echo get_theme_mod('strong_color'); ?>;
+            --highlight: <?php echo get_theme_mod('highlight_color'); ?>;
+        }
+    </style>
+    <?php
+}
+
 function generate_ga_integration()
 {
     $id = get_theme_mod('ga_id');
@@ -252,6 +268,7 @@ function redirect_update_browser($query)
 
 add_action( 'pre_get_posts', 'redirect_update_browser' );
 add_action( 'template_redirect', 'redirect_404' );
+add_action( 'wp_head', 'generate_dynamic_css');
 add_action( 'wp_head', 'generate_ga_integration');
 add_action( 'customize_register', 'register_options' );
 add_action( 'upload_mimes', 'add_file_types_to_uploads' );
