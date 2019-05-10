@@ -288,7 +288,18 @@ figure img {
     overflow: hidden;
     margin: 0.5rem;
     border-radius: 2em;
-    border-left: 0.5em solid var(--secondary)
+    border-left: 0.5em solid var(--secondary);
+    position: relative;
+}
+
+.link-cards > div > h2 a::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    display: block;
+    position: absolute;
 }
 
 /* Footer */

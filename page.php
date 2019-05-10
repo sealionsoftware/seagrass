@@ -34,12 +34,10 @@
             <?php
                 while ($featuredPages->have_posts()) : $featuredPages->the_post()
             ?>
-                <a href="<?php the_permalink();?>">
-                    <div>
-                        <h2><?php the_title();?></h2>
-                        <?php the_content('');?>
-                    </div>
-                </a>
+                <div>
+                    <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                    <?php the_content('');?>
+                </div>
             <?php
                 endwhile;
                 wp_reset_postdata();
