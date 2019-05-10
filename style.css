@@ -50,8 +50,8 @@ body > h2:before {
     background: linear-gradient(to left, var(--primary), var(--highlight));
 }
 
-h2,h3{
-    margin-top: 0;
+h2:first-child {
+    margin-top: 0.5em;
 }
 
 h2 {
@@ -70,8 +70,27 @@ blockquote {
     font-style: italic;
 }
 
-p {
+p, input {
     margin: 2em 0;
+}
+
+input, select {
+    padding: 0.5rem 1.5rem;
+    border-radius: 2em;
+    border: solid 0.1em var(--tertiary);
+    font-family: 'M PLUS 1p', sans-serif;
+    font-size: 1em;
+    color: var(--strong);
+    outline: none;
+}
+
+input[type=button] {
+    color: white;
+    background-color: var(--highlight);
+    min-width: 6em;
+    border: none;
+    float: right;
+    cursor: pointer;
 }
 
 /* General Styles */
@@ -284,6 +303,10 @@ figure img {
     border-radius: 2em;
     border-left: 0.5em solid var(--secondary);
     position: relative;
+}
+
+.link-cards > div > h2 {
+    margin-top: 0;
 }
 
 .link-cards > div > h2 a::after {
