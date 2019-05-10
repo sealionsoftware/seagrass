@@ -104,7 +104,6 @@ ul.menu li {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    flex-wrap: wrap;
 }
 
 .logo-bound {
