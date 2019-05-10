@@ -160,18 +160,6 @@ function register_color_option( $wp_customize, $name, $display_name)
     )));
 }
 
-function register_ga_option( $wp_customize )
-{
-    $wp_customize->add_setting( 'ga_id' , array(
-        'transport' => 'refresh'
-    ));
-    $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ga_id', array(
-        'label'      => __( 'Google Analytics Tracker ID', 'seagrass' ),
-        'section'    => 'title_tagline',
-        'settings'   => 'ga_id',
-    )));
-}
-
 function register_banner_option( $wp_customize )
 {
     $wp_customize->add_setting( 'default_banner_image' , array(
@@ -199,7 +187,6 @@ function register_options( $wp_customize ) {
     register_color_option($wp_customize, 'tertiary_color', 'Tertiary Color');
     register_color_option($wp_customize, 'strong_color', 'Strong Color');
     register_color_option($wp_customize, 'highlight_color', 'Highlight Color');
-    register_ga_option($wp_customize);
     register_banner_option($wp_customize);
 }
 
@@ -217,36 +204,6 @@ function generate_dynamic_css()
         }
     </style>
     <?php
-}
-
-function generate_ga_integration()
-{
-    $id = get_theme_mod('ga_id');
-    if ($id) : ?>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $id; ?>"></script>
-        <script>
-
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', "<?php echo $id; ?>");
-
-            $(document).on($.modal.OPEN, function(){
-                gtag('event', 'overlay', {
-                    'event_label': 'Overlay Open'
-                });
-            });
-
-            $(document).on('submit', function () {
-                gtag('event', 'generate_lead', {
-                    'event_label': 'Form Submit',
-                    'value': $(this).attr('name')
-                });
-            });
-
-        </script>
-    <?php endif;
 }
 
 function redirect_404()
@@ -284,7 +241,6 @@ function redirect_update_browser($query)
 add_action( 'pre_get_posts', 'redirect_update_browser' );
 add_action( 'template_redirect', 'redirect_404' );
 add_action( 'wp_head', 'generate_dynamic_css');
-add_action( 'wp_head', 'generate_ga_integration');
 add_action( 'customize_register', 'register_options' );
 add_action( 'upload_mimes', 'add_file_types_to_uploads' );
 add_action( 'widgets_init', 'register_widgets' );
