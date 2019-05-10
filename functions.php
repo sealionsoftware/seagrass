@@ -226,10 +226,25 @@ function generate_ga_integration()
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo $id; ?>"></script>
         <script>
+
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', "<?php echo $id; ?>");
+
+            $(document).on($.modal.OPEN, function(){
+                gtag('event', 'overlay', {
+                    'event_label': 'Overlay Open'
+                });
+            });
+
+            $('form').submit(function () {
+                gtag('event', 'generate_lead', {
+                    'event_label': 'Form Submit',
+                    'value': $.attr('name')
+                });
+            });
+
         </script>
     <?php endif;
 }
