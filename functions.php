@@ -238,10 +238,10 @@ function generate_ga_integration()
                 });
             });
 
-            $('form').submit(function () {
+            $(document).on('submit', function () {
                 gtag('event', 'generate_lead', {
                     'event_label': 'Form Submit',
-                    'value': $.attr('name')
+                    'value': $(this).attr('name')
                 });
             });
 
