@@ -251,6 +251,8 @@ figure img {
     display: flex;
     align-items: center;
     height: 100vh;
+    padding: var(--gutter);
+    box-sizing: border-box;
 }
 
 .landing div:first-child {
