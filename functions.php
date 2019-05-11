@@ -37,11 +37,15 @@ add_theme_support( 'starter-content', array(
     'attachments' => array(
         'image-seagrass-meadow' => array(
             'post_title' => _x( 'Seagrass Meadow', 'Defaults', 'seagrass' ),
-            'file'       => 'sea-algae.jpg'
+            'file'       => 'sea-algae.png'
         ),
         'image-seagrass-logo' => array(
             'post_title' => _x( 'Seagrass Logo', 'Defaults', 'seagrass' ),
             'file'       => 'seagrass-logo.svg'
+        ),
+        'image-seagrass-icon' => array(
+            'post_title' => _x( 'Seagrass Icon', 'Defaults', 'seagrass' ),
+            'file'       => 'seagrass-icon.png'
         )
     ),
 
