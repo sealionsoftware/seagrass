@@ -31,9 +31,9 @@ h1,h2{
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2em;
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 0.5em 1em;
     background-color: white; opacity:0.85;
     border-radius: 2em;
 }
@@ -44,12 +44,12 @@ h2:first-child {
 
 h2 {
     font-weight: 200;
-    font-size: 3rem;
+    font-size: 3em;
     color: var(--primary);
 }
 
 h3 {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     color: var(--secondary);
 }
 
@@ -63,7 +63,7 @@ p, input {
 }
 
 input, select {
-    padding: 0.5rem 1.5rem;
+    padding: 0.5em 1.5em;
     border-radius: 2em;
     border: solid 0.1em var(--tertiary);
     font-family: 'M PLUS 1p', sans-serif;
@@ -130,9 +130,9 @@ input[type=button] {
 }
 
 .logo-bound {
-    height: 10rem;
-    min-width: 15rem;
-    margin: 1rem 0;
+    height: 10em;
+    min-width: 15em;
+    margin: 1em 0;
     position:relative;
 }
 
@@ -141,7 +141,7 @@ input[type=button] {
     height: 100%;
     max-width: 100%;
     bottom: 0;
-    min-height: 4rem;
+    min-height: 4em;
 }
 
 .wide-menu {
@@ -153,13 +153,13 @@ input[type=button] {
     float: right;
     margin: 1em 0;
     display: none;
-    font-size: 2rem;
+    font-size: 2em;
 }
 
 .wide-menu .navigation-menu ul {
     display: flex;
     float: right;
-    margin: 2rem 0;
+    margin: 2em 0;
 }
 
 .mobile-menu {
@@ -184,10 +184,10 @@ input[type=button] {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: 12rem;
+    min-height: 12em;
     display: flex;
     align-items: center;
-    margin-bottom: var(--gutter);
+    margin-bottom: 4em;
 }
 
 .navigation-menu{
@@ -195,7 +195,7 @@ input[type=button] {
 }
 
 .wide-menu .menu-item {
-    margin-left: 1rem;
+    margin-left: 1em;
 }
 
 .navigation-menu li a:hover {
@@ -205,7 +205,7 @@ input[type=button] {
 .wide-menu .navigation-menu li.action a {
     background-color: var(--highlight);
     color: white;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5em 1.5em;
     border-radius: 2em;
 }
 
@@ -215,7 +215,7 @@ input[type=button] {
 }
 
 #overlay {
-    padding: 2rem;
+    padding: 2em;
     border-radius: 2em;
 }
 
@@ -223,7 +223,7 @@ input[type=button] {
     font-size: 4em;
     font-weight: 100;
     line-height: 1.2em;
-    margin: 1em 0 2em 0;
+    margin: 0.8em 0 1.2em 0;
     position: relative;
 }
 
@@ -248,7 +248,7 @@ input[type=button] {
 }
 
 figure img {
-    margin: 1rem 2rem;
+    margin: 1em 2em;
 }
 
 .landing {
@@ -269,10 +269,10 @@ figure img {
 }
 
 .article {
-    padding: 2rem;
+    padding: 2em;
     background-color: white; opacity:0.85;
     border-radius: 2em;
-    margin: 3rem var(--gutter);
+    margin: 3em var(--gutter);
     box-shadow: rgba(0,0,0, 0.5) 0 2px 5px;
 }
 
@@ -286,7 +286,7 @@ figure img {
 
 .author h3 {
     display: inline;
-    margin-right: 1rem;
+    margin-right: 1em;
 }
 
 .author img {
@@ -297,15 +297,15 @@ figure img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 4rem 0;
+    margin: 4em 0;
 }
 
 .link-cards > div {
-    padding: 2rem;
-    width: 25rem;
-    height: 15rem;
+    padding: 2em;
+    width: 25em;
+    height: 15em;
     overflow: hidden;
-    margin: 0.5rem;
+    margin: 0.5em;
     border-radius: 2em;
     border-left: 0.5em solid var(--secondary);
     position: relative;
@@ -328,7 +328,7 @@ figure img {
 /* Footer */
 
 .footer {
-    margin-top: var(--gutter);
+    margin-top: 4em;
     padding: 1em var(--gutter);
     background-color: var(--strong);
     color: white;
@@ -368,7 +368,7 @@ figure img {
 @media screen and (max-width: 650px) {
 
     html {
-        --gutter: 3rem;
+        --gutter: 3em;
     }
 
     .wide-menu .navigation-menu {
@@ -402,7 +402,7 @@ figure img {
 @media screen and (min-width: 1600px) {
 
     html {
-        --gutter: 12rem;
+        --gutter: 12em;
     }
 
     body {
