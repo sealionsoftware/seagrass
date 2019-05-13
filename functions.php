@@ -177,9 +177,14 @@ function register_banner_option( $wp_customize )
 }
 
 function get_banner_image(){
-    if (has_post_thumbnail()){
-        return  the_post_thumbnail_url();
+
+    $_post = get_queried_object();
+    $id = get_post_thumbnail_id( $_post );
+
+    if ( $id != null ) {
+        return wp_get_attachment_image_url( $id, 'post-thumbnail' );
     }
+
     $id =  get_theme_mod('default_banner_image');
     return wp_get_attachment_url($id);
 }
