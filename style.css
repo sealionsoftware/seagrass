@@ -96,7 +96,7 @@ input[type=button] {
     padding: 0 var(--gutter);
 }
 
-.content li {
+.content > * > li {
     margin-left: 2em;
 }
 
