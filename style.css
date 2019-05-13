@@ -96,6 +96,10 @@ input[type=button] {
     padding: 0 var(--gutter);
 }
 
+.content li {
+    margin-left: 2em;
+}
+
 .content > h2:before {
     content: "";
     display: block;
