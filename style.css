@@ -96,6 +96,11 @@ input[type=button] {
     display : inline-block;
 }
 
+.menu li {
+    padding: 0;
+    display : inline;
+}
+
 .content > * {
     padding: 0 var(--gutter);
 }
