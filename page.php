@@ -27,7 +27,7 @@
             <?php if (have_posts()) : while (have_posts()) : ?>
                 <?php the_post(); the_content(); ?>
             <?php endwhile; endif; ?>
-            <?php if ($featuredPages != null ) : ?>
+            <?php if (isset($featuredPages )) : ?>
                 <div class="link-cards">
                     <?php while ($featuredPages->have_posts()) : $featuredPages->the_post() ?>
                         <div>
