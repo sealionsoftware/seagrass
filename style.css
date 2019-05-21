@@ -305,6 +305,7 @@ figure img {
     border-radius: 2em;
     margin: 3em var(--gutter);
     box-shadow: rgba(0,0,0, 0.5) 0 2px 5px;
+    overflow: hidden;
 }
 
 .article p:last-child {
