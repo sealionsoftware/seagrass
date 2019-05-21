@@ -127,6 +127,7 @@ input[type=button] {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    position: relative;
 }
 
 .logo-bound {
@@ -134,6 +135,8 @@ input[type=button] {
     min-width: 15em;
     margin: 1em 0;
     position:relative;
+    z-index: 2;
+
 }
 
 .custom-logo {
@@ -142,6 +145,23 @@ input[type=button] {
     max-width: 100%;
     bottom: 0;
     min-height: 4em;
+}
+
+.top-links {
+    position: absolute;
+    top: 1em;
+    right: 0;
+    color: var(--secondary) !important;
+    width: 100%;
+}
+
+.top-links div {
+    width: unset;
+}
+
+.top-links span {
+    font-size: 2em;
+    margin-left: 0.4em;
 }
 
 .wide-menu {
@@ -300,6 +320,10 @@ figure img {
     margin: 4em 0;
 }
 
+.link-cards img {
+    height: auto;
+}
+
 .link-cards > div {
     padding: 2em;
     width: 25em;
@@ -334,20 +358,12 @@ figure img {
     color: white;
 }
 
-.top-links {
-    position: absolute;
-    top: 1em;
-    right: var(--gutter);
-    color: var(--secondary) !important;
+.footer-links {
+    display: flex;
 }
 
-.top-links span {
-    font-size: 2em;
-    margin-left: 0.4em;
-}
-
-.footer-right-links {
-    float: right;
+.footer-left-links {
+    flex: 1;
 }
 
 .footer-right-links span {
