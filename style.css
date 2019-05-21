@@ -92,11 +92,8 @@ input[type=button] {
 
 .menu {
     padding: 0;
-}
-
-.menu li {
-    display: inline;
-    white-space: nowrap;
+    white-space : nowrap;
+    display : inline-block;
 }
 
 .content > * {
@@ -157,13 +154,8 @@ input[type=button] {
 .top-links {
     position: absolute;
     top: 1em;
-    right: var(--gutter);
+    right: 0;
     color: var(--secondary) !important;
-    width: 100%;
-}
-
-.top-links ul {
-    float: right;
 }
 
 .top-links li {
