@@ -47,7 +47,7 @@ function canResizeSVGSmoothly(){
         $(".wide-menu .icon").click(function(e) {
             e.preventDefault();
             this.blur();
-            $(".mobile-menu").toggleClass('open');
+            $(".mobile-menu .navigation-menu").slideToggle();
         });
 
     });

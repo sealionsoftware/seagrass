@@ -1,6 +1,6 @@
 <div class="header pinned">
+    <?php echo wp_nav_menu( array( 'theme_location' => 'top-links', 'container_class' => 'top-links', 'fallback_cb' => false ) ); ?>
     <div class="navbar">
-        <?php echo wp_nav_menu( array( 'theme_location' => 'top-links', 'container_class' => 'top-links', 'fallback_cb' => false ) ); ?>
         <div class="logo-bound">
             <?php echo get_custom_logo( $blog_id = 0 ) ?>
         </div>
