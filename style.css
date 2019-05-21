@@ -244,6 +244,7 @@ input[type=button] {
 #overlay {
     padding: 2em;
     border-radius: 2em;
+    max-width: 30em;
 }
 
 .description {
@@ -342,6 +343,12 @@ figure img {
     position: relative;
     flex-grow: 1;
     flex-basis: 33%;
+    max-width: 33%;
+}
+
+.link-cards > div:hover {
+    border-color: var(--primary);
+
 }
 
 .link-cards > div > h2 {
