@@ -197,6 +197,7 @@ input[type=button] {
 
 .mobile-menu ul {
     margin-top: 0;
+    width: 100%;
 }
 
 .mobile-menu .menu-item {
