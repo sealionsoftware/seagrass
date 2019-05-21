@@ -37,7 +37,7 @@ add_theme_support( 'starter-content', array(
     'attachments' => array(
         'image-seagrass-meadow' => array(
             'post_title' => _x( 'Seagrass Meadow', 'Defaults', 'seagrass' ),
-            'file'       => 'sea-algae.png'
+            'file'       => 'sea-algae.jpg'
         ),
         'image-seagrass-logo' => array(
             'post_title' => _x( 'Seagrass Logo', 'Defaults', 'seagrass' ),
