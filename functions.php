@@ -2,7 +2,7 @@
 
 $minimum_browser_version = array(
     'Chrome' => 70,
-    'Firefox' => 70,
+    'Firefox' => 65,
     'Edge' => 17,
     'Internet Explorer' => 11,
     'Safari' => 5
