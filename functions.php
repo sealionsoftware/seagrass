@@ -4,7 +4,7 @@ $minimum_browser_version = array(
     'Chrome' => 70,
     'Firefox' => 65,
     'Edge' => 17,
-    'Internet Explorer' => 11,
+    'IE' => 13,
     'Safari' => 5
 );
 
@@ -239,7 +239,7 @@ function redirect_update_browser($query)
     }
 
     $min_version = $GLOBALS['minimum_browser_version'][$browser];
-    if ($min_version == null || $version < $min_version) {
+    if ($min_version != null && $version < $min_version) {
         $query = new WP_Query();
         $query->query( array('pagename' => 'update-browser' ) );
         $query->is_page = false;
