@@ -4,7 +4,7 @@
     <body>
         <div class="landing">
             <div class="logo-bound">
-                <?php echo get_custom_logo( $blog_id = 0 ) ?>
+                <?php echo get_custom_logo() ?>
             </div>
             <div>
                 <?php if (have_posts()) : while (have_posts()) : the_post();?>
