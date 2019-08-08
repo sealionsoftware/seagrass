@@ -1,5 +1,4 @@
 <head>
-    <title><?php echo get_bloginfo( 'name' ); ?> - <?php echo single_post_title(); ?></title>
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,400" crossorigin="anonymous" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/style.css" >
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/icomoon/icons.css">
@@ -11,12 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
 
     <?php
-        $description=get_post_custom_values('description');
-        if ($description != null) :
-    ?>
-        <meta name="description" content="<?php echo $description[0] ?>">
-    <?php
-        endif;
         wp_head();
     ?>
 </head>
