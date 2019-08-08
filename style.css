@@ -251,7 +251,7 @@ input[type=button] {
     max-width: 30em;
 }
 
-.description {
+.excerpt {
     font-size: 4em;
     font-weight: 100;
     line-height: 1.2em;
@@ -259,7 +259,7 @@ input[type=button] {
     position: relative;
 }
 
-.description::before {
+.excerpt::before {
     content: "";
     display: block;
     position: absolute;
@@ -434,7 +434,7 @@ figure img {
         flex-direction: column;
     }
 
-    .description {
+    .excerpt {
         font-size: 2em;
     }
 

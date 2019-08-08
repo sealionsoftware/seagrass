@@ -11,16 +11,6 @@
     <body>
         <div class="content">
             <?php get_header(); ?>
-            <?php if ($description != null) : ?>
-                <style>
-                    .description::before {
-                        background-image: url('<?php echo get_site_icon_url() ?>')
-                    }
-                </style>
-                <div class="description">
-                    <?php echo $description[0] ?>
-                </div>
-            <?php endif ?>
             <?php if (have_posts()) : while (have_posts()) : ?>
                 <?php the_post(); the_content(); ?>
             <?php endwhile; endif; ?>

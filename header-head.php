@@ -9,6 +9,12 @@
     <script src="<?php echo get_bloginfo('template_directory'); ?>/script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
 
+    <style>
+        .excerpt::before {
+            background-image: url('<?php echo get_site_icon_url() ?>')
+        }
+    </style>
+
     <?php
         wp_head();
     ?>
