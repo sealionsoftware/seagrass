@@ -225,29 +225,6 @@ function redirect_404()
     }
 }
 
-function redirect_update_browser($query)
-{
-    if ((!$query->is_main_query() || is_admin())){
-        return;
-    }
-
-    $user_agent = get_browser(null,true);
-    $browser = $user_agent['browser'];
-    $version = $user_agent['version'];
-    if ($browser == null || $version == null || $version == 0){
-        return;
-    }
-
-    $min_version = $GLOBALS['minimum_browser_version'][$browser];
-    if ($min_version != null && $version < $min_version) {
-        $query = new WP_Query();
-        $query->query( array('pagename' => 'update-browser' ) );
-        $query->is_page = false;
-        $GLOBALS['wp_query'] = $query;
-    }
-}
-
-add_action( 'pre_get_posts', 'redirect_update_browser' );
 add_action( 'template_redirect', 'redirect_404' );
 add_action( 'wp_head', 'generate_dynamic_css');
 add_action( 'customize_register', 'register_options' );
