@@ -10,9 +10,6 @@ html {
 body {
     margin: 0;
     color: var(--strong);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
 
 a {
@@ -26,6 +23,7 @@ h1, h2 {
 
 h1, h2, h3 {
     line-height: 1em;
+    overflow-wrap: break-word;
 }
 
 h1 {
@@ -96,16 +94,22 @@ input[type=button] {
     display : inline;
 }
 
-body > * {
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content > * {
     padding: var(--spacer) var(--gutter);
     margin: 0;
 }
 
-body > * > li {
+.content > * > li {
     margin-left: 2em;
 }
 
-body > h2:before {
+.content > h2:before {
     content: "";
     display: block;
     height: 0.1em;
@@ -269,10 +273,6 @@ body > h2:before {
     flex: 1;
 }
 
-figure img {
-    margin: 1em 2em;
-}
-
 .landing {
     display: flex;
     align-items: center;
@@ -297,7 +297,7 @@ figure img {
     box-shadow: rgba(0,0,0, 0.5) 0 2px 5px;
     overflow: hidden;
     position: relative;
-    margin: var(--spacer) var(--gutter);
+    margin: var(--spacer) var(--gutter) 0  var(--gutter);
 }
 
 .article:after {
@@ -312,6 +312,12 @@ figure img {
 
 .article p:last-child {
     margin-bottom: 0;
+}
+
+.article-spacer {
+    display: block;
+    padding: 0;
+    margin-bottom: var(--spacer);
 }
 
 .author {
