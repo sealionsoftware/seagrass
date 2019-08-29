@@ -17,7 +17,6 @@
                     </div>
                 </div>
             <?php endwhile; endif; ?>
-            <span class="article-spacer"></span>
             <?php get_footer(); ?>
         </div>
         <?php wp_footer(); ?>

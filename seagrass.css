@@ -100,9 +100,15 @@ input[type=button] {
     min-height: 100vh;
 }
 
+.content-spacer {
+    display: block;
+    padding: 0;
+    margin-bottom: var(--spacer);
+}
+
 .content > * {
-    padding: var(--spacer) var(--gutter);
-    margin: 0;
+    padding: 0 var(--gutter);
+    margin: var(--spacer) 0 0 0;
 }
 
 .content > * > li {
@@ -127,6 +133,7 @@ input[type=button] {
     z-index: 1;
     line-height: 2em;
     padding: 0 var(--gutter);
+    margin: 0;
 }
 
 .pinned {
@@ -213,6 +220,8 @@ input[type=button] {
     background-position: center;
     display: flex;
     align-items: center;
+    padding: var(--spacer) var(--gutter);
+    margin: 0;
 }
 
 .navigation-menu{
@@ -314,12 +323,6 @@ input[type=button] {
     margin-bottom: 0;
 }
 
-.article-spacer {
-    display: block;
-    padding: 0;
-    margin-bottom: var(--spacer);
-}
-
 .author {
     text-align: right;
 }
@@ -338,7 +341,8 @@ input[type=button] {
     flex-wrap: wrap;
     justify-content: space-around;
     background: linear-gradient(141deg,var(--primary),var(--highlight));
-    margin-top: auto;
+    padding: 1em var(--gutter);
+    margin: auto 0 0 0;
 }
 
 .link-cards > div {
@@ -380,6 +384,7 @@ input[type=button] {
 
 .footer {
     padding: 1em var(--gutter);
+    margin: 0;
     background-color: var(--strong);
     color: white;
 }

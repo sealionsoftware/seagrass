@@ -4,6 +4,7 @@ $childPages = new WP_Query(array(
     'post_parent'       => $post->ID
 ));
 ?>
+<span class="content-spacer"></span>
 <div class="link-cards">
     <?php while ($childPages->have_posts()) : $childPages->the_post() ?>
         <div>
