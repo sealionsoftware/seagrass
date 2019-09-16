@@ -2,7 +2,7 @@ html {
     font-family: 'M PLUS 1p', sans-serif;
     overflow-y: scroll;
     --gutter: 6rem;
-    --spacer: 3rem;
+    --spacer: 2rem;
 }
 
 /* Basic Elements */
@@ -60,6 +60,10 @@ p {
 
 p, input {
     margin: 2em 0;
+}
+
+p a {
+    color: var(--highlight);
 }
 
 input, select {
@@ -121,6 +125,10 @@ input[type=button] {
     height: 0.1em;
     margin-bottom: 0.6em;
     background: linear-gradient(to right, var(--highlight), rgba(0,0,0,0));
+}
+
+.textwidget:first-child {
+    margin-top: 0;
 }
 
 /* Header */
@@ -278,10 +286,6 @@ input[type=button] {
 
 /* Page Body */
 
-.main {
-    flex: 1;
-}
-
 .landing {
     display: flex;
     align-items: center;
@@ -299,6 +303,24 @@ input[type=button] {
     margin: 1em 2em;
 }
 
+.news {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.news > div {
+    min-width: 0;
+}
+
+.feed {
+    flex: 1;
+    margin-right: 1em;
+}
+
+.sidebar {
+    flex: 0 0 12em;
+}
+
 .article {
     padding: 2.5em 2em 2em 2em;
     background: white;
@@ -306,7 +328,7 @@ input[type=button] {
     box-shadow: rgba(0,0,0, 0.5) 0 2px 5px;
     overflow: hidden;
     position: relative;
-    margin: var(--spacer) var(--gutter) 0  var(--gutter);
+    margin: 0 1em var(--spacer) 1em ;
 }
 
 .article:after {
@@ -334,6 +356,17 @@ input[type=button] {
 
 .author img {
     vertical-align: bottom;
+}
+
+.article-link {
+    color: var(--primary);
+    overflow-wrap: break-word;
+    margin-bottom: 1em;
+}
+
+.article-date {
+    display: block;
+    color: var(--strong);
 }
 
 .link-cards  {
