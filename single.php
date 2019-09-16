@@ -5,7 +5,6 @@
 <div class="content">
     <?php get_header();?>
     <div class="news">
-        <?php get_header('blog-sidebar');?>
         <div class="feed">
             <?php if (have_posts()) : while (have_posts()) : the_post();?>
                 <div class="article">
@@ -19,7 +18,7 @@
                 </div>
             <?php endwhile; endif; ?>
         </div>
-
+        <?php get_header('blog-sidebar');?>
     </div>
     <?php get_footer(); ?>
 </div>

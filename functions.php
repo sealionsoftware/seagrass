@@ -225,6 +225,12 @@ function redirect_404()
     }
 }
 
+function excerpt_more($more) {
+    return ' <a href="' . get_permalink() . '">[Read more]</a>';
+}
+
+add_filter('excerpt_more', 'excerpt_more', 21 );
+
 add_action( 'template_redirect', 'redirect_404' );
 add_action( 'wp_head', 'generate_dynamic_css');
 add_action( 'customize_register', 'register_options' );
