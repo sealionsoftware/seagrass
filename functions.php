@@ -226,7 +226,7 @@ function redirect_404()
 }
 
 function excerpt_more($more) {
-    return ' <a href="' . get_permalink() . '">[Read more]</a>';
+    return ' <a href="' . get_permalink() . '">[read more]</a>';
 }
 
 add_filter('excerpt_more', 'excerpt_more', 21 );
