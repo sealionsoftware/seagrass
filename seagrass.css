@@ -34,7 +34,7 @@ h1 {
     border-radius: 2em;
 }
 
-h2:first-child {
+h1:first-child, h2:first-child, h3:first-child {
     margin-top: 0;
 }
 
@@ -58,7 +58,7 @@ p {
     line-height: 2em;
 }
 
-p, input {
+p, input, textarea {
     margin: 2em 0;
 }
 
@@ -66,8 +66,7 @@ p a {
     color: var(--highlight);
 }
 
-input, select {
-    padding: 0.5em 1.5em;
+input, select, textarea {
     border-radius: 2em;
     border: solid 0.1em var(--tertiary);
     font-family: 'M PLUS 1p', sans-serif;
@@ -76,13 +75,25 @@ input, select {
     outline: none;
 }
 
-input[type=button] {
+input, select {
+    padding: 0.5em 1.5em;
+}
+
+input[type=button], input[type=submit] {
     color: white;
     background-color: var(--highlight);
     min-width: 6em;
     border: none;
     float: right;
     cursor: pointer;
+    margin-bottom: 0;
+}
+
+textarea {
+    width: 100%;
+    padding: 1em;
+    resize: none;
+    box-sizing: border-box;
 }
 
 /* General Styles */
@@ -334,6 +345,27 @@ input[type=button] {
     margin: 0 1em var(--spacer) 1em ;
 }
 
+.article textarea, .article .comment-notes {
+    margin: 1em 0;
+}
+
+.article input {
+    margin: 0;
+}
+
+.article input[type=checkbox] {
+    margin-right: 1em;
+}
+
+.article .form-submit {
+    margin: 0;
+}
+
+.article .comment-form label {
+    display: inline-block;
+    min-width: 6em;
+}
+
 .article:after {
     background: linear-gradient(to right, var(--highlight), rgba(0,0,0,0));
     position: absolute;
@@ -342,10 +374,6 @@ input[type=button] {
     right: 0;
     height: 0.5em;
     content: " ";
-}
-
-.article p:last-child {
-    margin-bottom: 0;
 }
 
 .article-actions {

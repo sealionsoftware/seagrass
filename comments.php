@@ -33,7 +33,7 @@ if ( $comments ) foreach ( $comments as $comment ) : ?>
     <div class="article-actions">
         <div class="article-author">
             <a href="<?php echo esc_url($comment->comment_author_url) ?>">
-                <h3>by <?php echo esc_html($comment->comment_author) ?></h3>
+                <h3><?php echo esc_html($comment->comment_author) ?></h3>
                 <?php echo get_avatar( $comment->comment_author_email, 50 ); ?>
             </a>
         </div>
@@ -47,4 +47,16 @@ if ( $comments ) foreach ( $comments as $comment ) : ?>
     <?php endforeach; ?>
 </div>
 
-<?php endforeach;
+<?php endforeach; if (comments_open()): ?>
+
+<div class="article">
+    <?php
+        comment_form([
+             'logged_in_as' => '',
+             'must_log_in' => '<p class="must-log-in">' .  sprintf( __( 'Please <a href="%s">log in</a> to post a comment.*' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( ) ) ) ) . '</p>',
+             'comment_field' => '<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="Add your comment" required></textarea>'
+        ]);
+    ?>
+</div>
+
+<?php endif;
