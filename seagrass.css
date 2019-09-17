@@ -348,16 +348,23 @@ input[type=button] {
     margin-bottom: 0;
 }
 
-.author {
-    text-align: right;
+.article-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-direction: row-reverse;
 }
 
-.author h3 {
+.article-actions h3 {
     display: inline;
+    margin: 0;
+}
+
+.article-author h3 {
     margin-right: 1em;
 }
 
-.author img {
+.article-author img {
     vertical-align: bottom;
 }
 

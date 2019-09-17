@@ -6,17 +6,24 @@
     <?php get_header();?>
     <div class="news">
         <div class="feed">
-            <?php if (have_posts()) : while (have_posts()) : the_post();?>
+            <?php while (have_posts()) : the_post();?>
                 <div class="article">
+                    <h3><?php the_date(); ?></h3>
                     <?php the_content(); ?>
-                    <div class="author">
-                        <a href="<?php echo get_the_author_meta('user_url') ?>">
-                            <h3>by <?php echo get_the_author_meta('display_name'); ?></h3>
-                            <?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?>
-                        </a>
+                    <div class="article-actions">
+                        <div class="article-author">
+                            <a href="<?php echo esc_url(get_the_author_meta('user_url')) ?>">
+                                <h3>by <?php echo esc_html(get_the_author_meta('display_name')); ?></h3>
+                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            <?php endwhile; endif; ?>
+                <?php
+                    if ( comments_open() || get_comments_number() ) :
+                        comments_template();
+                    endif;
+                endwhile; ?>
         </div>
         <?php get_header('blog-sidebar');?>
     </div>
