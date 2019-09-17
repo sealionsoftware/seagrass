@@ -50,20 +50,50 @@ h3 {
 }
 
 blockquote {
-    margin: 0 var(--spacer);;
     font-style: italic;
+    position: relative;
+}
+
+blockquote::before {
+    content: "“";
+    position: absolute;
+    left: -0.3em;
+    z-index: -2;
+    opacity: 0.2;
+    font-size: 16em;
+    color: var(--primary);
+    line-height: 1em;
+    top: -0.2em;
+    font-family: "Trebuchet MS";
+}
+
+blockquote::after {
+    content: "”";
+    position: absolute;
+    right: -0.15em;
+    bottom: 0;
+    z-index: -2;
+    opacity: 0.2;
+    font-size: 16em;
+    color: var(--primary);
+    line-height: 0;
+    font-family: "Trebuchet MS";
 }
 
 p {
     line-height: 2em;
 }
 
-p, input, textarea {
+p, input, textarea, cite {
     margin: 2em 0;
 }
 
 p a {
     color: var(--highlight);
+}
+
+cite {
+    display: block;
 }
 
 input, select, textarea {
@@ -130,12 +160,29 @@ textarea {
     margin-left: 2em;
 }
 
+.content > blockquote {
+    margin: var(--spacer) var(--gutter);
+}
+
+.content > blockquote::before {
+    top: -0.1em;
+    left: 0.1em;
+}
+
+.content > blockquote::after {
+    right: 0.2em;
+}
+
 .content > h2:before {
     content: "";
     display: block;
     height: 0.1em;
     margin-bottom: 0.6em;
     background: linear-gradient(to right, var(--highlight), rgba(0,0,0,0));
+}
+
+.content figure img {
+    margin: 1em 0;
 }
 
 .textwidget:first-child {
@@ -512,6 +559,14 @@ textarea {
 
     body > h2:before {
         height: 0.2em;
+    }
+
+    .content > blockquote::before {
+        left: -0.1em;
+    }
+
+    .content > blockquote::after {
+        right: 0.1em;
     }
 
 
