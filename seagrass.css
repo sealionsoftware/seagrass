@@ -145,7 +145,7 @@ textarea {
     min-height: 100vh;
 }
 
-.content-spacer {
+.content > .content-spacer {
     display: block;
     padding: 0;
     margin-bottom: var(--spacer);
@@ -161,7 +161,7 @@ textarea {
 }
 
 .content > blockquote {
-    margin: var(--spacer) var(--gutter);
+    margin: var(--spacer) var(--gutter) 0 var(--gutter);
 }
 
 .content > blockquote::before {
@@ -576,7 +576,7 @@ textarea {
 
     html {
         --gutter: 12rem;
-        --spacer: 8rem;
+        --spacer: 6rem;
     }
 
     body {
