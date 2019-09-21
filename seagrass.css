@@ -408,7 +408,7 @@ textarea {
     margin: 0;
 }
 
-.article .comment-form label {
+.article .comment-form label:first-child {
     display: inline-block;
     min-width: 6em;
 }
