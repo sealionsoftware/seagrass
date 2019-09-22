@@ -2,10 +2,12 @@
 const ALLOWED_ELEMENTS = ['b' => [], 'strong' => [], 'i' => [], 'a'=> ['href' => [], 'title' => []], 'blockquote' => [], 'del' => [], 'ins' => [], 'ul' => [], 'ol' => [], 'li' => [], 'code' => []];
 
 $comments = (new WP_Comment_Query(array(
-    'status' => 'approve',
-    'parent' => 0
+    'parent' => 0,
+    'post_id' => get_the_ID(),
+
 )))->get_comments();
 $replies = groupById((new WP_Comment_Query(array(
+    'post_id' => get_the_ID(),
     'status' => 'approve',
     'parent__in' => array_map(function($comment){ return $comment->comment_ID;},  $comments),
     'user_id' => get_the_author_meta( 'ID' )
@@ -26,10 +28,18 @@ function groupById($comments){
     return $ret;
 }
 
-if ( $comments ) foreach ( $comments as $comment ) : ?>
+function shouldDisplayComment($comment){
+    return ($comment->comment_approved) || $comment->comment_author == get_current_user() ||
+        (! empty( $_GET['unapproved'] ) && ! empty( $_GET['moderation-hash'] ) && $_GET['moderation-hash'] == wp_hash( $comment->comment_date_gmt ));
+}
 
-<div class="article">
-    <?php echo wp_kses($comment->comment_content, ALLOWED_ELEMENTS) ?>
+if ( $comments ) foreach ( $comments as $comment ) :
+    if(!shouldDisplayComment($comment)) continue; ?>
+
+<div class="article" id="comment-<?php echo $comment->comment_id ?>">
+    <?php echo wp_kses($comment->comment_content, ALLOWED_ELEMENTS); if (!($comment->comment_approved)): ?>
+        <p class="warning">Your comment is awaiting moderation, and is not visible to others yet.</p>
+    <?php endif; ?>
     <div class="article-actions">
         <div class="article-author">
             <a href="<?php echo esc_url($comment->comment_author_url) ?>">

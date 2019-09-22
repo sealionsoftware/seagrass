@@ -454,6 +454,11 @@ textarea {
     color: var(--strong);
 }
 
+.warning {
+    color: var(--highlight);
+    font-style: italic;
+}
+
 .link-cards  {
     display: flex;
     flex-wrap: wrap;
