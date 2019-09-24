@@ -1,11 +1,12 @@
 <?php
 const ALLOWED_ELEMENTS = ['b' => [], 'strong' => [], 'i' => [], 'a'=> ['href' => [], 'title' => []], 'blockquote' => [], 'del' => [], 'ins' => [], 'ul' => [], 'ol' => [], 'li' => [], 'code' => []];
 
-$comments = (new WP_Comment_Query(array(
-    'parent' => 0,
-    'post_id' => get_the_ID(),
+if (!isset($wp_query) || !isset($wp_query->comments)){
+    return;
+}
 
-)))->get_comments();
+$comments = $wp_query->comments;
+
 $replies = groupById((new WP_Comment_Query(array(
     'post_id' => get_the_ID(),
     'status' => 'approve',
@@ -28,13 +29,8 @@ function groupById($comments){
     return $ret;
 }
 
-function shouldDisplayComment($comment){
-    return ($comment->comment_approved) || $comment->comment_author == get_current_user() ||
-        (! empty( $_GET['unapproved'] ) && ! empty( $_GET['moderation-hash'] ) && $_GET['moderation-hash'] == wp_hash( $comment->comment_date_gmt ));
-}
 
-if ( $comments ) foreach ( $comments as $comment ) :
-    if(!shouldDisplayComment($comment)) continue; ?>
+if ( $comments ) foreach ( $comments as $comment ) : ?>
 
 <div class="article" id="comment-<?php echo $comment->comment_id ?>">
     <?php echo wp_kses($comment->comment_content, ALLOWED_ELEMENTS); if (!($comment->comment_approved)): ?>

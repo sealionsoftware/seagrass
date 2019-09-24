@@ -229,7 +229,13 @@ function excerpt_more($more) {
     return ' <a href="' . get_permalink() . '">[read more]</a>';
 }
 
+function comments_template_query_args($args){
+    $args['parent'] = 0;
+    return $args;
+}
+
 add_filter('excerpt_more', 'excerpt_more', 21 );
+add_filter('comments_template_query_args', 'comments_template_query_args', 21 );
 
 add_action( 'template_redirect', 'redirect_404' );
 add_action( 'wp_head', 'generate_dynamic_css');
