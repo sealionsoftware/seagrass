@@ -88,10 +88,6 @@ p, input, textarea, cite {
     margin: 2em 0;
 }
 
-p a {
-    color: var(--highlight);
-}
-
 cite {
     display: block;
 }
@@ -183,6 +179,10 @@ textarea {
 
 .content figure img {
     margin: 1em 0;
+}
+
+.copy a {
+    color: var(--highlight);
 }
 
 .textwidget:first-child {

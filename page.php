@@ -4,9 +4,11 @@
     <body>
         <div class="content">
             <?php get_header(); ?>
-            <?php if (have_posts()) : while (have_posts()) : ?>
-                <?php the_post(); the_content(); ?>
-            <?php endwhile; endif; ?>
+            <div class="copy">
+                <?php if (have_posts()) : while (have_posts()) : ?>
+                    <?php the_post(); the_content(); ?>
+                <?php endwhile; endif; ?>
+            </div>
             <?php get_footer(); ?>
         </div>
         <?php wp_footer(); ?>
