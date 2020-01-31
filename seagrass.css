@@ -2,7 +2,7 @@ html {
     font-family: 'M PLUS 1p', sans-serif;
     overflow-y: scroll;
     --gutter: 6rem;
-    --spacer: 2rem;
+    --spacer: 3rem;
 }
 
 /* Basic Elements */
@@ -77,7 +77,7 @@ blockquote::after {
     font-size: 16em;
     color: var(--primary);
     line-height: 0;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", sans-serif;
 }
 
 p {
@@ -86,6 +86,10 @@ p {
 
 p, input, textarea, cite {
     margin: 2em 0;
+}
+
+p:first-child, cite:first-child, li:first-child, figure {
+    margin-top: 0;
 }
 
 p a {
@@ -124,6 +128,24 @@ textarea {
     padding: 1em;
     resize: none;
     box-sizing: border-box;
+}
+
+figure  {
+    position: relative;
+}
+
+figure img  {
+    margin: 0
+}
+
+figure figcaption {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    font-size: 2em;
+    background-color: rgba(0,0,0,.5);
+    padding: 0.3em 0.6em;
+    margin: 0 !important;
 }
 
 /* General Styles */
@@ -179,10 +201,6 @@ textarea {
     height: 0.1em;
     margin-bottom: 0.6em;
     background: linear-gradient(to right, var(--highlight), rgba(0,0,0,0));
-}
-
-.content figure img {
-    margin: 1em 0;
 }
 
 .textwidget:first-child {
@@ -359,6 +377,24 @@ textarea {
 .landing div {
     flex: 2;
     margin: 1em 2em;
+}
+
+.iconified-paragraphs .wp-block-media-text  {
+    display: flex;
+    margin-bottom: 1.8em;
+}
+
+.iconified-paragraphs .wp-block-media-text .wp-block-media-text__media  {
+    flex: 0 0 3em;
+    margin: 0 2em 0 1em;
+}
+
+.iconified-paragraphs .wp-block-media-text .wp-block-media-text__content {
+    padding: 0
+}
+
+.iconified-paragraphs p {
+    margin: 0
 }
 
 .news {
