@@ -1,8 +1,8 @@
 html {
     font-family: 'M PLUS 1p', sans-serif;
     overflow-y: scroll;
-    --gutter: 6rem;
-    --spacer: 3rem;
+    --gutter: 6em;
+    --spacer: 3em;
 }
 
 /* Basic Elements */
@@ -77,7 +77,7 @@ blockquote::after {
     font-size: 16em;
     color: var(--primary);
     line-height: 0;
-    font-family: "Trebuchet MS", sans-serif;
+    font-family: "Trebuchet MS";
 }
 
 p {
@@ -148,6 +148,7 @@ figure figcaption {
     background-color: rgba(0,0,0,.5);
     padding: 0.3em 0.6em;
     margin: 0 !important;
+    max-height: 80%;
 }
 
 /* General Styles */
@@ -203,6 +204,22 @@ figure figcaption {
     margin-bottom: 0.6em;
     background: linear-gradient(to right, var(--highlight), rgba(0,0,0,0));
 }
+.content > .wp-block-media-text > .wp-block-media-text__media {
+    margin: var(--spacer) 0;
+}
+
+.content > .wp-block-media-text > .wp-block-media-text__content {
+    margin: var(--spacer) 0;
+}
+
+.inverted {
+    font-size: 1.6em;
+    margin: var(--spacer) 0;
+    padding: var(--spacer) var(--gutter);
+    background: linear-gradient(141deg,var(--tertiary),var(--secondary));
+    color: white;
+}
+
 
 .textwidget:first-child {
     margin-top: 0;
@@ -215,6 +232,8 @@ figure figcaption {
 .wp-block-column {
     margin: var(--spacer) 0;
 }
+
+
 
 /* Header */
 
@@ -357,6 +376,7 @@ figure figcaption {
     line-height: 1.2em;
     margin: 0.8em 0;
     position: relative;
+    padding: 0.5em 2em;
 }
 
 .excerpt::before {
@@ -587,8 +607,8 @@ figure figcaption {
 @media screen and (max-width: 650px) {
 
     html {
-        --gutter: 1.5rem;
-        --spacer: 1.5rem;
+        --gutter: 1.5em;
+        --spacer: 1.5em;
     }
 
     .wide-menu .navigation-menu {
@@ -623,14 +643,18 @@ figure figcaption {
         right: 0.1em;
     }
 
+    figure figcaption, .inverted {
+        font-size: 1.4em;
+    }
+
 
 }
 
 @media screen and (min-width: 1600px) {
 
     html {
-        --gutter: 12rem;
-        --spacer: 6rem;
+        --gutter: 12em;
+        --spacer: 6em;
     }
 
     body {
