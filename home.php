@@ -5,7 +5,7 @@
         <div class="content">
             <?php get_header();?>
             <div class="news">
-                <div class="feed copy">
+                <div class="feed">
                     <?php if (have_posts()) : while (have_posts()) : the_post();?>
                         <div class="article">
                             <a href="<?php echo the_permalink() ?>">
