@@ -1,8 +1,8 @@
 html {
     font-family: 'M PLUS 1p', sans-serif;
     overflow-y: scroll;
-    --gutter: 6em;
-    --spacer: 3em;
+    --gutter: 6rem;
+    --spacer: 3rem;
 }
 
 /* Basic Elements */
@@ -216,7 +216,7 @@ figure figcaption {
     font-size: 1.6em;
     margin: var(--spacer) 0;
     padding: var(--spacer) var(--gutter);
-    background: linear-gradient(141deg,var(--tertiary),var(--secondary));
+    background: linear-gradient(141deg,var(--secondary),var(--primary));
     color: white;
 }
 
@@ -607,8 +607,8 @@ figure figcaption {
 @media screen and (max-width: 650px) {
 
     html {
-        --gutter: 1.5em;
-        --spacer: 1.5em;
+        --gutter: 1.5rem;
+        --spacer: 1.5rem;
     }
 
     .wide-menu .navigation-menu {
@@ -629,6 +629,10 @@ figure figcaption {
 
     .excerpt {
         font-size: 2em;
+    }
+
+    .inverted {
+        padding: 2em;
     }
 
     body > h2:before {
@@ -653,8 +657,8 @@ figure figcaption {
 @media screen and (min-width: 1600px) {
 
     html {
-        --gutter: 12em;
-        --spacer: 6em;
+        --gutter: 12rem;
+        --spacer: 6rem;
     }
 
     body {
