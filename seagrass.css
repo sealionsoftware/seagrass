@@ -135,7 +135,8 @@ figure  {
 }
 
 figure img  {
-    margin: 0
+    margin: 0;
+    display: block;
 }
 
 figure figcaption {
@@ -175,7 +176,6 @@ figure figcaption {
 
 .content > * {
     padding: 0 var(--gutter);
-    margin: var(--spacer) 0 0 0;
 }
 
 .content > * > li {
@@ -205,6 +205,14 @@ figure figcaption {
 
 .textwidget:first-child {
     margin-top: 0;
+}
+
+.wp-block-columns {
+    margin: 0 !important;
+}
+
+.wp-block-column {
+    margin: var(--spacer) 0;
 }
 
 /* Header */
@@ -410,12 +418,12 @@ figure figcaption {
 .feed {
     flex: 1;
     min-width: 18em;
-    margin: 0 0 var(--spacer) 0;
+    margin: var(--spacer) 0 0 0;
 }
 
 .sidebar {
     flex: 0 0 12em;
-    margin: 0 1em var(--spacer) 1em;
+    margin: var(--spacer) 1em 0 1em;
 }
 
 .article {
