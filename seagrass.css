@@ -92,7 +92,8 @@ p:first-child, cite:first-child, li:first-child, figure {
     margin-top: 0;
 }
 
-p a {
+
+p a, li a, cite a {
     color: var(--highlight);
 }
 
@@ -228,6 +229,10 @@ figure figcaption {
     margin: 0;
 }
 
+.header a, .footer a {
+    color: inherit;
+}
+
 .pinned {
     position: -webkit-sticky; /* Safari */
     position: sticky;
@@ -261,7 +266,7 @@ figure figcaption {
     position: absolute;
     top: 1em;
     right: 0;
-    color: var(--secondary) !important;
+    color: var(--secondary);
 }
 
 .top-links li {
