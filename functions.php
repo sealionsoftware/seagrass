@@ -109,13 +109,6 @@ add_theme_support( 'starter-content', array(
     )
 ) );
 
-function add_file_types_to_uploads($file_types){
-    $new_filetypes = array();
-    $new_filetypes['svg'] = 'image/svg+xml';
-    $file_types = array_merge($file_types, $new_filetypes );
-    return $file_types;
-}
-
 function register_menus() {
     register_nav_menus(
         array(
@@ -240,6 +233,5 @@ add_filter('comments_template_query_args', 'comments_template_query_args', 21 );
 add_action( 'template_redirect', 'redirect_404' );
 add_action( 'wp_head', 'generate_dynamic_css');
 add_action( 'customize_register', 'register_options' );
-add_action( 'upload_mimes', 'add_file_types_to_uploads' );
 add_action( 'widgets_init', 'register_widgets' );
 add_action( 'init', 'register_menus' );
