@@ -376,7 +376,6 @@ figure figcaption {
     line-height: 1.2em;
     margin: 0.8em 0;
     position: relative;
-    padding: 0.5em 2em;
 }
 
 .excerpt::before {
