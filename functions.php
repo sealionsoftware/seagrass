@@ -46,6 +46,10 @@ add_theme_support( 'starter-content', array(
         'image-seagrass-icon' => array(
             'post_title' => _x( 'Seagrass Icon', 'Defaults', 'seagrass' ),
             'file'       => 'seagrass-icon.png'
+        ),
+        'image-seagrass-bullet' => array(
+            'post_title' => _x( 'Seagrass Bullet', 'Defaults', 'seagrass' ),
+            'file'       => 'seagrass-bullet.svg'
         )
     ),
 
