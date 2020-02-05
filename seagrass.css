@@ -352,6 +352,10 @@ figure figcaption {
     margin: 0;
 }
 
+.graphic h1 {
+    line-height: 1em;
+}
+
 .navigation-menu{
     font-weight: bolder;
 }
