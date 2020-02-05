@@ -8,7 +8,6 @@
         <div class="feed">
             <?php while (have_posts()) : the_post();?>
                 <div class="article">
-                    <h3><?php the_date(); ?></h3>
                     <?php the_content(); ?>
                     <div class="article-actions">
                         <div class="article-author">

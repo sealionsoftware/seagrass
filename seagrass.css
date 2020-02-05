@@ -22,7 +22,6 @@ h1, h2 {
 }
 
 h1, h2, h3 {
-    line-height: 1em;
     overflow-wrap: break-word;
 }
 
@@ -88,7 +87,7 @@ p, input, textarea, cite {
     margin: 2em 0;
 }
 
-p:first-child, cite:first-child, li:first-child, figure {
+p:first-child, cite:first-child, li:first-child, figure:first-child {
     margin-top: 0;
 }
 
@@ -133,11 +132,13 @@ textarea {
 
 figure  {
     position: relative;
+    margin: 0 2em 2em 0;
 }
 
 figure img  {
     margin: 0;
     display: block;
+    height: auto;
 }
 
 figure figcaption {
@@ -220,6 +221,16 @@ figure figcaption {
     color: white;
 }
 
+.aside {
+    width:50%;
+    background: var(--tertiary);
+    border-radius: 1em;
+    float: right;
+    padding: 2em;
+    margin: 0 0 2em 2em;
+    font-size: 0.8em;
+    box-sizing: border-box;
+}
 
 .textwidget:first-child {
     margin-top: 0;
@@ -442,7 +453,7 @@ figure figcaption {
 
 .feed {
     flex: 1;
-    min-width: 18em;
+    min-width: 26em;
     margin: var(--spacer) 0 0 0;
 }
 
@@ -482,6 +493,18 @@ figure figcaption {
     min-width: 6em;
 }
 
+.article p, .article li {
+    line-height: 1.6em;
+}
+
+.article figure.alignleft {
+    margin-right: 3em;
+}
+
+.article figure.alignright {
+    margin-left: 2em;
+}
+
 .article:after {
     background: linear-gradient(to right, var(--highlight), rgba(0,0,0,0));
     position: absolute;
@@ -490,6 +513,10 @@ figure figcaption {
     right: 0;
     height: 0.5em;
     content: " ";
+}
+
+.article p:first-child {
+    margin-top: 0;
 }
 
 .article-actions {
@@ -611,6 +638,10 @@ figure figcaption {
         --spacer: 1.5rem;
     }
 
+    h2 {
+        font-size: 2em;
+    }
+    
     .wide-menu .navigation-menu {
         display: none;
     }
@@ -635,6 +666,11 @@ figure figcaption {
         padding: 2em;
     }
 
+    .aside {
+        width: 100%;
+        padding: 1em;
+    }
+
     body > h2:before {
         height: 0.2em;
     }
@@ -648,9 +684,13 @@ figure figcaption {
     }
 
     figure figcaption, .inverted {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 
+    .wp-block-image figure {
+        float: none !important;
+        margin: 0 auto 2em auto !important;
+    }
 
 }
 
