@@ -18,4 +18,11 @@ $year = null;
             <span class="article-date"><?php the_date('F j');?></span>
         </div>
     <?php endwhile; wp_reset_postdata();?>
+
+    <?php
+    if ( has_nav_menu( 'external-article-links' ) ): ?>
+        <h2>Articles</h2>
+        <?php echo wp_nav_menu( array( 'theme_location' => 'external-article-links', 'container_class' => 'external-article-links', 'fallback_cb' => false ) );
+    endif;
+    ?>
 </div>

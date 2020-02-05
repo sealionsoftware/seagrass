@@ -603,6 +603,12 @@ figure figcaption {
     height: auto;
 }
 
+.external-article-links li {
+    display: block;
+    margin-bottom: 1em;
+    white-space: normal;
+}
+
 /* Footer */
 
 .footer {

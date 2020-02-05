@@ -120,6 +120,7 @@ function register_menus() {
             'navigation-menu' => __( 'Navigation Menu' ),
             'footer-left-links' => __( 'Footer Left Links' ),
             'footer-right-links' => __( 'Footer Right Links' ),
+            'external-article-links' => __( 'External Article Links' ),
         )
     );
 }
