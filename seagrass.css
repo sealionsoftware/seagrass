@@ -597,6 +597,7 @@ figure figcaption {
     content: "";
     display: block;
     position: absolute;
+    z-index: 100;
 }
 
 .link-cards img {
