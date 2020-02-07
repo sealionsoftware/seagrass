@@ -149,6 +149,7 @@ figure figcaption {
     padding: 0.3em 0.6em;
     margin: 0 !important;
     max-height: 80%;
+    pointer-events: none;
 }
 
 /* General Styles */
