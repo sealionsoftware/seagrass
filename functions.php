@@ -174,10 +174,9 @@ function register_banner_option( $wp_customize )
     )));
 }
 
-function get_banner_image(){
+function get_banner_image($post = null){
 
-    $_post = get_queried_object();
-    $id = get_post_thumbnail_id( $_post );
+    $id = get_post_thumbnail_id( $post );
 
     if ( $id != null ) {
         return wp_get_attachment_image_url( $id, 'post-thumbnail' );

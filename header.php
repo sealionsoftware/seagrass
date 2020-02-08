@@ -15,6 +15,6 @@
         <?php echo wp_nav_menu( array( 'theme_location' => 'navigation-menu', 'container_class' => 'navigation-menu', 'fallback_cb' => false )); ?>
     </div>
 </div>
-<div class="graphic" style="background-image: url('<?php echo get_banner_image() ?>');">
+<div class="graphic" style="background-image: url('<?php echo get_banner_image(get_queried_object()) ?>');">
     <h1><?php echo single_post_title() ?></h1>
 </div>

@@ -32,7 +32,7 @@ function groupById($comments){
 
 if ( $comments ) foreach ( $comments as $comment ) : ?>
 
-<div class="article" id="comment-<?php echo $comment->comment_id ?>">
+<div class="article">
     <?php echo wp_kses($comment->comment_content, ALLOWED_ELEMENTS); if (!($comment->comment_approved)): ?>
         <p class="warning">Your comment is awaiting moderation, and is not visible to others yet.</p>
     <?php endif; ?>

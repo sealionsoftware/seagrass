@@ -7,22 +7,23 @@
             <div class="news">
                 <div class="feed">
                     <?php if (have_posts()) : while (have_posts()) : the_post();?>
-                        <div class="article">
-                            <a href="<?php echo the_permalink() ?>">
-                                <h2><?php the_title();?></h2>
-                            </a>
-                            <?php the_excerpt(); ?>
-                            <div class="article-actions">
-                                <div class="article-author">
-                                    <a href="<?php echo esc_url(get_the_author_meta('user_url')); ?>">
-                                        <h3>by <?php echo esc_html(get_the_author_meta('display_name')); ?></h3>
-                                        <?php echo get_avatar( get_the_author_meta( 'ID' ), 50 ); ?>
-                                    </a>
-                                </div>
+                        <div class="article-card">
+                            <figure>
+                                <a href="<?php echo the_permalink() ?>">
+                                    <img src="<?php echo get_banner_image(); ?>"/>
+                                </a>
+                                <figcaption>
+                                    <?php the_title();  ?>
+                                </figcaption>
+                            </figure>
+                            <div class="article-card-metadata">
+                                <a href="<?php echo esc_url(get_the_author_meta('user_url')); ?>">
+                                    <?php echo esc_html(get_the_author_meta('display_name')); ?>
+                                </a>
+
+
                                 <?php $comments = get_comments_number(); if ($comments > 0) : ?>
-                                    <div class="article-comment">
-                                        <h3><?php echo esc_html($comments) ?> comment<?php if($comments > 1) echo 's' ?></h3>
-                                    </div>
+                                    - <?php echo esc_html($comments) ?> comment<?php if($comments > 1) echo 's' ?>
                                 <?php endif ?>
                             </div>
                         </div>
