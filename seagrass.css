@@ -453,7 +453,7 @@ figure figcaption {
 }
 
 .feed {
-    flex: 1;
+    flex: 20 0 20em;
     min-width: 26em;
     margin: var(--spacer) 0 0 0;
     display: flex;
@@ -461,8 +461,21 @@ figure figcaption {
 }
 
 .sidebar {
-    flex: 0 0 12em;
+    flex: 1 0 12em;
     margin: var(--spacer) 1em 0 1em;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.sidebar-group {
+    flex: 1 0 12em;
+    width: 50%;
+    margin-bottom: var(--spacer);
+}
+
+.sidebar-group:last-child {
+    margin-bottom: 0;
 }
 
 .article {
@@ -614,7 +627,7 @@ figure figcaption {
 .article-card {
     min-width: 20em;
     max-width: 30em;
-    margin: 0 1em 2em 1em;
+    margin: 0 1em var(--spacer) 1em;
     flex-grow: 1;
     flex-basis: 30%;
 }
