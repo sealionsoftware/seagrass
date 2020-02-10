@@ -153,6 +153,14 @@ figure figcaption {
     pointer-events: none;
 }
 
+hr {
+    display: block;
+    border: none;
+    height: 0.4em;
+    margin: var(--spacer) var(--gutter) 0 var(--gutter);
+    background: linear-gradient(to right, var(--highlight), rgba(0,0,0,0));
+}
+
 /* General Styles */
 
 .menu {
@@ -199,13 +207,7 @@ figure figcaption {
     right: 0.2em;
 }
 
-.content > h2:before {
-    content: "";
-    display: block;
-    height: 0.1em;
-    margin-bottom: 0.6em;
-    background: linear-gradient(to right, var(--highlight), rgba(0,0,0,0));
-}
+
 .content > .wp-block-media-text > .wp-block-media-text__media {
     margin: var(--spacer) 0;
 }
@@ -719,10 +721,6 @@ figure figcaption {
     .aside {
         width: 100%;
         padding: 1em;
-    }
-
-    body > h2:before {
-        height: 0.2em;
     }
 
     .content > blockquote::before {
