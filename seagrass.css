@@ -64,7 +64,7 @@ blockquote::before {
     color: var(--primary);
     line-height: 1em;
     top: -0.2em;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", serif;
 }
 
 blockquote::after {
@@ -77,7 +77,7 @@ blockquote::after {
     font-size: 16em;
     color: var(--primary);
     line-height: 0;
-    font-family: "Trebuchet MS";
+    font-family: "Trebuchet MS", serif;
 }
 
 p {
@@ -178,6 +178,7 @@ hr {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    counter-reset: section;
 }
 
 .content > .content-spacer {
@@ -383,6 +384,7 @@ hr {
     padding: 2em;
     border-radius: 2em;
     max-width: 30em;
+    overflow: hidden;
 }
 
 .excerpt {
@@ -443,6 +445,13 @@ hr {
 .iconified-paragraphs p {
     margin: 0
 }
+
+.warning {
+    color: var(--highlight);
+    font-style: italic;
+}
+
+/** News */
 
 .news {
     display: flex;
@@ -570,56 +579,6 @@ hr {
     color: var(--strong);
 }
 
-.warning {
-    color: var(--highlight);
-    font-style: italic;
-}
-
-.link-cards  {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background: linear-gradient(141deg,var(--primary),var(--highlight));
-    padding: 1em var(--gutter);
-    margin: auto 0 0 0;
-}
-
-.link-cards > div {
-    padding: 2em;
-    min-width: 20em;
-    max-width: 30em;
-    height: 20em;
-    overflow: hidden;
-    margin: 1em;
-    border-radius: 2em 0;
-    border-right: 0.5em solid var(--secondary);
-    position: relative;
-    flex-grow: 1;
-    flex-basis: 30%;
-    box-sizing: border-box;
-    background: white;
-}
-
-.link-cards > div:hover {
-    border-color: var(--primary);
-
-}
-
-.link-cards > div > h2 a::after {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: 100;
-}
-
-.link-cards img {
-    height: auto;
-}
-
 .external-article-links li {
     display: block;
     margin-bottom: 1em;
@@ -651,7 +610,108 @@ hr {
     display: inline-block;
 }
 
+/* Sections */
+
+.segments {
+    padding: 0;
+}
+
+.segments > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.segments > div > * {
+    width: 50%;
+    height: auto;
+    margin: 0;
+    box-sizing: border-box;
+    padding: var(--spacer) var(--gutter);
+    position: relative;
+    display: table-cell;
+}
+
+.segments > div > figure {
+    padding: 0;
+}
+
+.segments.counted > div > *:nth-child(4n):before {
+    counter-increment: section;
+    content: counter(section);
+    position: absolute;
+    top: -0.8em;
+    left: -0.8em;
+    width: 1.6em;
+    height: 1.6em;
+    line-height: 1.6em;
+    border-radius: 0.8em;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0;
+    background: var(--secondary);
+    font-size: 4em;
+    font-weight: 200;
+    color: white;
+}
+
+.segments > div > figure > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.segments > div > figure > figcaption {
+    font-size: 0.6em;
+}
+
 /* Footer */
+
+.link-cards  {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: linear-gradient(141deg,var(--primary),var(--highlight));
+    padding: 1em var(--gutter);
+    margin: auto 0 0 0;
+}
+
+.link-cards img {
+    height: auto;
+}
+
+.link-cards > div {
+    padding: 2em;
+    min-width: 20em;
+    max-width: 30em;
+    height: 20em;
+    overflow: hidden;
+    margin: 1em;
+    border-radius: 2em 0;
+    border-right: 0.5em solid var(--secondary);
+    position: relative;
+    flex-grow: 1;
+    flex-basis: 30%;
+    box-sizing: border-box;
+    background: white;
+}
+
+.link-cards > div:hover {
+    border-color: var(--primary);
+}
+
+.link-cards > div > h2 a::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 100;
+}
 
 .footer {
     padding: 1em var(--gutter);
@@ -743,6 +803,11 @@ hr {
     .article-card figure {
         height: 10em;
     }
+
+    .segments > div > *:nth-child(4n):before {
+        font-size: 3em;
+    }
+
 
 }
 
