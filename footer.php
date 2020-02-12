@@ -6,9 +6,15 @@ $childPages = new WP_Query(array(
 ?>
 <div class="link-cards">
     <?php while ($childPages->have_posts()) : $childPages->the_post() ?>
-        <div>
-            <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-            <?php the_content('');?>
+        <div class="article-card">
+            <figure>
+                <a href="<?php echo the_permalink() ?>">
+                    <img src="<?php echo get_banner_image(); ?>"/>
+                </a>
+                <figcaption>
+                    <?php the_title();  ?>
+                </figcaption>
+            </figure>
         </div>
     <?php endwhile; wp_reset_postdata();?>
 </div>

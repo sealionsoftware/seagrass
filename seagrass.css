@@ -592,7 +592,7 @@ hr {
 }
 
 .article-card figure {
-    margin: 0 0 1em 0;
+    margin: 0;
     height: 20em;
     overflow: hidden;
     border-radius: 1em 1em 1em 0;
@@ -606,6 +606,7 @@ hr {
 
 .article-card-metadata {
     display: inline-block;
+    margin-top: 1em;
 }
 
 /* Sections */
@@ -676,39 +677,8 @@ hr {
     margin: auto 0 0 0;
 }
 
-.link-cards img {
-    height: auto;
-}
-
-.link-cards > div {
-    padding: 2em;
-    min-width: 20em;
-    max-width: 30em;
-    height: 20em;
-    overflow: hidden;
+.link-cards > .article-card {
     margin: 1em;
-    border-radius: 2em 0;
-    border-right: 0.5em solid var(--secondary);
-    position: relative;
-    flex-grow: 1;
-    flex-basis: 30%;
-    box-sizing: border-box;
-    background: white;
-}
-
-.link-cards > div:hover {
-    border-color: var(--primary);
-}
-
-.link-cards > div > h2 a::after {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: 100;
 }
 
 .footer {
