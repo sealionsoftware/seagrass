@@ -461,16 +461,13 @@ hr {
     flex-wrap: wrap;
 }
 
-.news > div {
-    overflow: hidden;
-}
-
 .feed {
     flex: 20 0 20em;
     min-width: 26em;
     margin: var(--spacer) 0 0 0;
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .sidebar {
@@ -479,6 +476,7 @@ hr {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+    overflow: hidden;
 }
 
 .sidebar-group {
@@ -589,6 +587,7 @@ hr {
     margin: 0 1em var(--spacer) 1em;
     flex-grow: 1;
     flex-basis: 30%;
+
 }
 
 .article-card figure {
@@ -596,6 +595,8 @@ hr {
     height: 20em;
     overflow: hidden;
     border-radius: 1em 1em 1em 0;
+    display: block !important;
+    transition: height, width, 0.3s ease-in-out;
 }
 
 .article-card img {
@@ -607,6 +608,10 @@ hr {
 .article-card-metadata {
     display: inline-block;
     margin-top: 1em;
+}
+
+.article-card figure:hover {
+    transform: scale(1.02, 1.02);
 }
 
 /* Sections */
