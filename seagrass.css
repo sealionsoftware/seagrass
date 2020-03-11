@@ -92,6 +92,10 @@ p:first-child, cite:first-child, li:first-child, figure:first-child {
     margin-top: 0;
 }
 
+p:last-child, cite:last-child, li:last-child, figure:last-child {
+    margin-bottom: 0;
+}
+
 
 p a, li a, cite a {
     color: var(--highlight);
@@ -161,6 +165,10 @@ hr {
     background: linear-gradient(to right, var(--highlight), rgba(0,0,0,0));
 }
 
+iframe {
+    width: 100%;
+}
+
 /* General Styles */
 
 .menu {
@@ -184,6 +192,20 @@ hr {
 
 .content > * {
     padding: 0 var(--gutter);
+    margin: var(--spacer) 0 0 0;
+}
+
+.content > .wp-block-columns, .content > .wp-block-media-text {
+    margin: 0;
+}
+
+.content > *:nth-last-child(4){
+    margin-bottom: var(--spacer);
+}
+
+
+.content > .wp-block-columns > *, .content > .wp-block-media-text > *, .content > .wp-block-media-text > figure {
+    margin: var(--spacer) 0 0 0;
 }
 
 .content > * > li {
@@ -203,28 +225,12 @@ hr {
     right: 0.2em;
 }
 
-.content > .wp-block-media-text, .content > p, .content > ul, .content iframe {
-    margin: var(--spacer) 0;
-}
-
-.content > .wp-block-media-text > .wp-block-media-text__media {
-    margin: var(--spacer) 0;
-}
-
-.content > .wp-block-media-text > .wp-block-media-text__content {
-    margin: var(--spacer) 0;
-}
-
 
 .inverted {
     font-size: 1.6em;
     padding: var(--spacer) var(--gutter);
     background: linear-gradient(141deg,var(--secondary),var(--primary));
     color: white;
-}
-
-.content > .inverted {
-    margin: 0;
 }
 
 .aside {
@@ -240,14 +246,6 @@ hr {
 
 .textwidget:first-child {
     margin-top: 0;
-}
-
-.wp-block-columns {
-    margin: 0 !important;
-}
-
-.wp-block-column {
-    margin: var(--spacer) 0;
 }
 
 
@@ -464,7 +462,6 @@ hr {
 .feed {
     flex: 20 0 20em;
     min-width: 26em;
-    margin: var(--spacer) 0 0 0;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -472,7 +469,7 @@ hr {
 
 .sidebar {
     flex: 1 0 12em;
-    margin: var(--spacer) 1em 0 1em;
+    margin: 0 1em;
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -485,6 +482,10 @@ hr {
     margin-bottom: var(--spacer);
 }
 
+.sidebar-group:last-child {
+    margin-bottom: 0;
+}
+
 .article {
     padding: 2.5em 2em 2em 2em;
     background: white;
@@ -493,6 +494,10 @@ hr {
     overflow: hidden;
     position: relative;
     margin: 0 1em var(--spacer) 1em ;
+}
+
+.article:last-child {
+    margin-bottom: 0;
 }
 
 .article textarea, .article .comment-notes {
@@ -618,6 +623,7 @@ hr {
 
 .segments {
     padding: 0;
+    margin: 0 !important;
 }
 
 .segments > div {
@@ -772,7 +778,7 @@ hr {
         font-size: 1.2em;
     }
 
-    .wp-block-image figure {
+    .wp-block-image figure, .wp-block-column figure {
         float: none !important;
         margin: 0 auto 2em auto !important;
     }
