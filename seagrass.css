@@ -195,6 +195,10 @@ iframe {
     margin: var(--spacer) 0 0 0;
 }
 
+.content > .double-spaced > * {
+    margin: var(--spacer) 0;
+}
+
 .content > .wp-block-columns, .content > .wp-block-media-text {
     margin: 0;
 }
