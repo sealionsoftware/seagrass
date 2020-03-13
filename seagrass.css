@@ -195,10 +195,6 @@ iframe {
     margin: var(--spacer) 0 0 0;
 }
 
-.content > .double-spaced > * {
-    margin: var(--spacer) 0;
-}
-
 .content > .wp-block-columns, .content > .wp-block-media-text {
     margin: 0;
 }
@@ -784,7 +780,7 @@ iframe {
 
     .wp-block-image figure, .wp-block-column figure {
         float: none !important;
-        margin: 0 auto 2em auto !important;
+        margin: 0 auto 2em auto;
     }
 
     .article-card figure {
