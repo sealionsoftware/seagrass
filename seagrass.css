@@ -387,10 +387,6 @@ iframe {
     margin-left: 1em;
 }
 
-.navigation-menu li a:hover {
-    color: var(--primary);
-}
-
 .wide-menu .navigation-menu li.action a {
     background-color: var(--highlight);
     color: white;
@@ -429,6 +425,19 @@ iframe {
     opacity: 0.2;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.wp-block-button__link  {
+    font-family: 'M PLUS 1p', sans-serif;
+    font-weight: bolder;
+    padding: 0.5em 1.5em !important;
+    border-radius: 2em !important;
+    background-color: var(--highlight) !important;
+    transition: 0.6s;
+}
+
+.wp-block-button__link:hover {
+    background-color: var(--strong) !important;
 }
 
 /* Page Body */
