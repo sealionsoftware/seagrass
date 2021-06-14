@@ -482,10 +482,6 @@ iframe {
     margin-bottom: var(--spacer);
 }
 
-.sidebar-group:last-child {
-    margin-bottom: 0;
-}
-
 .article {
     padding: 2.5em 2em 2em 2em;
     background: white;
@@ -494,10 +490,6 @@ iframe {
     overflow: hidden;
     position: relative;
     margin: 0 1em var(--spacer) 1em ;
-}
-
-.article:last-child {
-    margin-bottom: 0;
 }
 
 .article textarea, .article .comment-notes {
@@ -781,6 +773,10 @@ iframe {
     .wp-block-image figure, .wp-block-column figure {
         float: none !important;
         margin: 0 auto 2em auto;
+    }
+
+    .article-card {
+        max-width: unset;
     }
 
     .article-card figure {
