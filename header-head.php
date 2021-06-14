@@ -1,5 +1,6 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,400" crossorigin="anonymous" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400" crossorigin="anonymous" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/style.css" >
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/seagrass.css" >
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/icomoon/icons.css">
