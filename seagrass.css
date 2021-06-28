@@ -801,6 +801,11 @@ iframe {
     color: var(--primary);
 }
 
+.prepend-icon-sign-in::before {
+    content: '\f090\ ';
+    font-family: icomoon;
+}
+
 /* Responsive */
 
 @media screen and (max-width: 650px) {
