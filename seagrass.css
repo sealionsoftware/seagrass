@@ -3,6 +3,7 @@ html {
     overflow-y: scroll;
     --gutter: 6rem;
     --spacer: 3rem;
+    --transition: 0.4s;
 }
 
 /* Basic Elements */
@@ -15,7 +16,7 @@ body {
 a {
     color: inherit;
     text-decoration: none;
-    transition: 0.6s;
+    transition: var(--transition);
 }
 
 a:hover {
@@ -52,11 +53,11 @@ h2 {
 
 h3 {
     font-size: 1.2em;
+    transition: var(--transition);
     color: var(--secondary);
 }
 
 a h3:hover {
-    transition: 0.6s;
     color: var(--strong);
 }
 
@@ -91,7 +92,7 @@ blockquote::after {
     font-family: "Trebuchet MS", serif;
 }
 
-p {
+p, ul, ol {
     line-height: 2em;
 }
 
@@ -139,7 +140,7 @@ input[type=button], input[type=submit] {
     float: right;
     cursor: pointer;
     margin-bottom: 0;
-    transition: 0.6s;
+    transition: var(--transition);
 }
 
 input[type=button]:hover, input[type=submit]:hover {
@@ -387,6 +388,10 @@ iframe {
     margin-left: 1em;
 }
 
+.navigation-menu li a:hover {
+    color: var(--primary);
+}
+
 .wide-menu .navigation-menu li.action a {
     background-color: var(--highlight);
     color: white;
@@ -433,7 +438,7 @@ iframe {
     padding: 0.5em 1.5em !important;
     border-radius: 2em !important;
     background-color: var(--highlight) !important;
-    transition: 0.6s;
+    transition: var(--transition);
 }
 
 .wp-block-button__link:hover {
@@ -624,7 +629,7 @@ iframe {
     overflow: hidden;
     border-radius: 1em 1em 1em 0;
     display: block !important;
-    transition: height, width, 0.3s ease-in-out;
+    transition: height, width, var(--transition) ease-in-out;
 }
 
 .article-card img {
@@ -685,6 +690,7 @@ iframe {
     vertical-align: middle;
     margin: 0;
     background: var(--secondary);
+    font-family: 'M PLUS 1p', sans-serif;
     font-size: 4em;
     font-weight: 200;
     color: white;
