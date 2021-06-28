@@ -195,7 +195,6 @@ iframe {
     padding: 0;
     white-space : nowrap;
     display : inline-block;
-    font-family: 'M PLUS 1p', sans-serif;
 }
 
 .menu li {
@@ -384,6 +383,7 @@ iframe {
 
 .navigation-menu{
     font-weight: bolder;
+    font-family: 'M PLUS 1p', sans-serif;
 }
 
 .wide-menu .menu-item {
