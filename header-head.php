@@ -2,7 +2,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;400&family=Roboto:wght@400&display=swap" crossorigin="anonymous" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;400&family=Roboto:wght@400&display=swap" crossorigin="anonymous"  type='text/css' media="print" onload="this.onload=null;this.media='all'">
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/style.css" >
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/seagrass.css" >
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/icomoon/icons.css">
