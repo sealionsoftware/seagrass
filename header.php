@@ -16,6 +16,17 @@
     </div>
 </div>
 <?php $featuredImage = get_featured( get_queried_object()) ?>
-<div class="graphic" style="background-image: url('<?php echo wp_get_attachment_image_url( $featuredImage, "banner" ); ?>'); background-image: image-set(<?php echo wp_get_attachment_image_imageset( $featuredImage); ?>);">
+<style type="text/css">
+    .banner {
+        background-image: url('<?php echo wp_get_attachment_image_url( $featuredImage, "banner" ); ?>');
+    }
+
+    @media screen and (max-width: 650px) {
+        .banner {
+            background-image: url('<?php echo wp_get_attachment_image_url( $featuredImage, "mobile-banner" ); ?>');
+        }
+    }
+</style>
+<div class="banner">
     <h1><?php echo single_post_title() ?></h1>
 </div>

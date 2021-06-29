@@ -9,6 +9,7 @@ $minimum_browser_version = array(
 );
 
 add_image_size( "banner", 2000, 500, true );
+add_image_size( "mobile-banner", 650, 165, true );
 
 add_theme_support( 'title-tag' );
 add_theme_support( 'custom-logo' );
@@ -230,11 +231,6 @@ function excerpt_more($more) {
 function comments_template_query_args($args){
     $args['parent'] = 0;
     return $args;
-}
-
-function wp_get_attachment_image_imageset($attachment_id, $size = null, $image_meta = null){
-    $srcset = wp_get_attachment_image_srcset($attachment_id, $size, $image_meta);
-    return preg_replace('/ ?([^,]+) ([^,]+)/', "url('$1') $2", $srcset);
 }
 
 add_filter('excerpt_more', 'excerpt_more', 21 );
