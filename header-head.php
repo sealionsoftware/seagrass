@@ -1,6 +1,8 @@
 <head>
-    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,400" crossorigin="anonymous" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400" crossorigin="anonymous" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;400&family=Roboto:wght@400&display=swap" crossorigin="anonymous" >
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/style.css" >
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/seagrass.css" >
     <link rel="stylesheet" href="<?php echo get_bloginfo('template_directory'); ?>/icomoon/icons.css">
