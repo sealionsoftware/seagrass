@@ -420,6 +420,10 @@ iframe {
     position: relative;
 }
 
+.wide-menu .menu-item-has-children > a:active {
+    pointer-events: none;
+}
+
 .wide-menu .menu > .menu-item-has-children > ul.sub-menu {
     top: initial;
     left: initial;
