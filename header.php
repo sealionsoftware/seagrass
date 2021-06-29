@@ -15,6 +15,7 @@
         <?php echo wp_nav_menu( array( 'theme_location' => 'navigation-menu', 'container_class' => 'navigation-menu', 'fallback_cb' => false )); ?>
     </div>
 </div>
-<div class="graphic" style="background-image: url('<?php echo wp_get_attachment_image_url( get_featured( get_queried_object()), "banner" ) ?>');">
+<?php $featuredImage = get_featured( get_queried_object()) ?>
+<div class="graphic" style="background-image: url('<?php echo wp_get_attachment_image_url( $featuredImage, "banner" ); ?>'); background-image: image-set(<?php echo wp_get_attachment_image_imageset( $featuredImage); ?>);">
     <h1><?php echo single_post_title() ?></h1>
 </div>

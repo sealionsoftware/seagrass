@@ -1,7 +1,7 @@
 <?php
 $childPages = new WP_Query(array(
     'post_type' => 'page',
-    'post_parent'       => $post->ID
+    'post_parent' => $post->ID
 ));
 ?>
 <div class="link-cards">

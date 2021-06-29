@@ -232,6 +232,11 @@ function comments_template_query_args($args){
     return $args;
 }
 
+function wp_get_attachment_image_imageset($attachment_id, $size, $image_meta){
+    $srcset = wp_get_attachment_image_srcset($attachment_id, $size, $image_meta);
+    return preg_replace('/([^,]+) ([^,]+)/', "url('$1') $2", $srcset);
+}
+
 add_filter('excerpt_more', 'excerpt_more', 21 );
 add_filter('comments_template_query_args', 'comments_template_query_args', 21 );
 
@@ -240,3 +245,5 @@ add_action( 'wp_head', 'generate_dynamic_css');
 add_action( 'customize_register', 'register_options' );
 add_action( 'widgets_init', 'register_widgets' );
 add_action( 'init', 'register_menus' );
+
+
