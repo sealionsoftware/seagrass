@@ -8,6 +8,8 @@ $minimum_browser_version = array(
     'Safari' => 5
 );
 
+add_image_size( "banner", 2000, 500, true );
+
 add_theme_support( 'title-tag' );
 add_theme_support( 'custom-logo' );
 add_theme_support( 'post-thumbnails' );
@@ -174,7 +176,7 @@ function register_banner_option( $wp_customize )
     )));
 }
 
-function get_banner_image($post = null){
+function get_featured($post = null){
 
     $id = get_post_thumbnail_id( $post );
 
@@ -182,9 +184,8 @@ function get_banner_image($post = null){
         return $id;
     }
 
-    return  get_theme_mod('default_banner_image');
+    return get_theme_mod('default_banner_image');
 }
-
 
 function register_options( $wp_customize ) {
 
