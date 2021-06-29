@@ -179,12 +179,12 @@ function get_banner_image($post = null){
     $id = get_post_thumbnail_id( $post );
 
     if ( $id != null ) {
-        return wp_get_attachment_image_url( $id, 'post-thumbnail' );
+        return $id;
     }
 
-    $id =  get_theme_mod('default_banner_image');
-    return wp_get_attachment_url($id);
+    return  get_theme_mod('default_banner_image');
 }
+
 
 function register_options( $wp_customize ) {
 

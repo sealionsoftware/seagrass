@@ -6,11 +6,11 @@
             <?php get_header();?>
             <div class="news">
                 <div class="feed">
-                    <?php if (have_posts()) : while (have_posts()) : the_post();?>
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); $bannerImage=get_banner_image();?>
                         <div class="article-card">
                             <figure>
                                 <a href="<?php echo the_permalink() ?>">
-                                    <img src="<?php echo get_banner_image(); ?>"/>
+                                    <img src="<?php echo wp_get_attachment_image_url( $bannerImage ); ?>" alt="<?php echo the_title(); ?>" srcset="<?php echo wp_get_attachment_image_srcset( $bannerImage ); ?>"/>
                                 </a>
                                 <figcaption>
                                     <?php the_title();  ?>

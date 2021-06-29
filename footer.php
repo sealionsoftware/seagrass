@@ -5,11 +5,12 @@ $childPages = new WP_Query(array(
 ));
 ?>
 <div class="link-cards">
-    <?php while ($childPages->have_posts()) : $childPages->the_post() ?>
+    <?php while ($childPages->have_posts()) : $childPages->the_post(); $bannerImage=get_banner_image(); ?>
+
         <div class="article-card">
             <figure>
-                <a href="<?php echo the_permalink() ?>">
-                    <img src="<?php echo get_banner_image(); ?>"/>
+                <a href="<?php echo the_permalink(); ?>">
+                    <img loading="lazy" src="<?php echo wp_get_attachment_image_url( $bannerImage ); ?>" alt="<?php echo the_title(); ?>" srcset="<?php echo wp_get_attachment_image_srcset( $bannerImage ); ?>"/>
                 </a>
                 <figcaption>
                     <?php the_title();  ?>
